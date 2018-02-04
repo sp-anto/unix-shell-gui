@@ -1,0 +1,10 @@
+<div>
+  <label for="command">Select Command: </label>
+  <select id="command" required [(ngModel)]="selectedCommand" (change)="fetchCommandDocumentation()">
+    <option *ngFor="let command of commands" [value]="command">{{command}}</option>
+  </select>
+</div>
+
+<div>
+  <pre>{{command | json}}</pre>
+</div>
