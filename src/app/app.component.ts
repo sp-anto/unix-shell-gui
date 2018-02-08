@@ -8,9 +8,9 @@ import {Command} from './model/command';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private command: Command;
+  command: Command;
   private commands: string[];
-  private selectedCommand: string;
+  selectedCommand: string;
 
   constructor(private commandService: CommandService) {
   }
@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
     if (this.selectedCommand !== '') {
       this.commandService.getCommandByName(this.selectedCommand).then(command => {
         this.command = command;
+        console.log(command);
       });
     }
   }
