@@ -1,3 +1,7 @@
+/*
+ *This file is licensed under the terms of the Apache License 2.0
+ */
+
 import {Component, OnInit} from '@angular/core';
 import {CommandService} from './service/command.service';
 import {Command} from './model/command';

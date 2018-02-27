@@ -1,3 +1,7 @@
+/*
+ *This file is licensed under the terms of the Apache License 2.0
+ */
+
 import {CommandOption} from './command-option';
 import {CommandArgument} from './command-argument';
 

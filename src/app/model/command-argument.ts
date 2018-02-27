@@ -1,3 +1,7 @@
+/*
+ *This file is licensed under the terms of the Apache License 2.0
+ */
+
 export class CommandArgument {
   private _name: string;
   private _description: string;

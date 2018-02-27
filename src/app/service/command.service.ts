@@ -1,3 +1,7 @@
+/*
+ *This file is licensed under the terms of the Apache License 2.0
+ */
+
 import {Injectable} from '@angular/core';
 import {Command} from '../model/command';
 import {CommandDocumentationService} from './command-documentation.service';

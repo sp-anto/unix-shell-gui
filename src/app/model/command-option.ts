@@ -1,3 +1,7 @@
+/*
+ *This file is licensed under the terms of the Apache License 2.0
+ */
+
 export class CommandOption {
   private _token: string;
   private _description: string;
