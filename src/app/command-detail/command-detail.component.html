@@ -1,0 +1,32 @@
+<div class="container" *ngIf="command">
+  <div class="row justify-content-md-center">
+    <div class="col-md-10">
+      <h2 class="text-center">{{command.name}}</h2>
+      <table class="table">
+        <tbody>
+        <tr>
+          <th>Synopsis</th>
+          <td>{{command.syntax}}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{command.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-10">
+      <h4 class="text-center">Options</h4>
+      <table class="table">
+        <tbody>
+        <tr *ngFor="let option of command.commandOptions">
+          <th>{{option.token}}</th>
+          <td>{{option.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
