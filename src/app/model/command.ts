@@ -2,15 +2,14 @@
  *This file is licensed under the terms of the Apache License 2.0
  */
 
-import {CommandOption} from './command-option';
-import {CommandArgument} from './command-argument';
+import {Option} from './option';
 
 export class Command {
   private _name: string;
-  private _syntax: string[] = [];
-  private _description: string;
-  private _commandOptions: CommandOption[] = [];
-  private _commandArguments: CommandArgument[] = [];
+  private _shortDescription: string;
+  private _longDescription: string;
+  private _syntaxes: string[] = [];
+  private _options: Option[] = [];
 
   get name(): string {
     return this._name;
@@ -20,35 +19,35 @@ export class Command {
     this._name = value;
   }
 
-  get syntax(): string[] {
-    return this._syntax;
+  get shortDescription(): string {
+    return this._shortDescription;
   }
 
-  set syntax(value: string[]) {
-    this._syntax = value;
+  set shortDescription(value: string) {
+    this._shortDescription = value;
   }
 
-  get description(): string {
-    return this._description;
+  get longDescription(): string {
+    return this._longDescription;
   }
 
-  set description(value: string) {
-    this._description = value;
+  set longDescription(value: string) {
+    this._longDescription = value;
   }
 
-  get commandOptions(): CommandOption[] {
-    return this._commandOptions;
+  get syntaxes(): string[] {
+    return this._syntaxes;
   }
 
-  set commandOptions(value: CommandOption[]) {
-    this._commandOptions = value;
+  set syntaxes(value: string[]) {
+    this._syntaxes = value;
   }
 
-  get commandArguments(): CommandArgument[] {
-    return this._commandArguments;
+  get options(): Option[] {
+    return this._options;
   }
 
-  set commandArguments(value: CommandArgument[]) {
-    this._commandArguments = value;
+  set options(value: Option[]) {
+    this._options = value;
   }
 }

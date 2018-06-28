@@ -1,0 +1,158 @@
+{
+  "name": "mv",
+  "shortDescription": "move (rename) files",
+  "longDescription": "Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.",
+  "syntaxes": [
+    "mv [OPTION]... [-T] SOURCE DEST",
+    "mv [OPTION]... SOURCE... DIRECTORY",
+    "mv [OPTION]... -t DIRECTORY SOURCE..."
+  ],
+  "options": [
+    {
+      "name": "b",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Make a backup of each file that would otherwise be overwritten or removed.",
+      "isLong": false
+    },
+    {
+      "name": "f",
+      "argumentType": "NO_ARGUMENT",
+      "description": "prompts the user for whether to replace the file.  (You might own the file, or have write permission on its directory.)  If the response is not affirmative, the file is skipped.",
+      "isLong": false
+    },
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Prompt whether to overwrite each existing destination file, regardless of its permissions.  If the response is not affirmative, the file is skipped.  If you specify more than one of the ‘-i’, ‘-f’, ‘-n’ options, only the final one takes effect.",
+      "isLong": false
+    },
+    {
+      "name": "n",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not overwrite an existing file.  If you specify more than one of the ‘-i’, ‘-f’, ‘-n’ options, only the final one takes effect. This option is mutually exclusive with ‘-b’ or ‘--backup’ option.",
+      "isLong": false
+    },
+    {
+      "name": "t",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Specify the destination DIRECTORY.",
+      "isLong": false
+    },
+    {
+      "name": "u",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not move a non-directory that has an existing destination with the same or newer modification timestamp.  If the move is across file system boundaries, the comparison is to the source timestamp truncated to the resolutions of the destination file system and of the system calls used to update timestamps; this avoids duplicate work if several ‘mv -u’ commands are executed with the same source and destination.",
+      "isLong": false
+    },
+    {
+      "name": "v",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print the name of each file before moving it.",
+      "isLong": false
+    },
+    {
+      "name": "S",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Append SUFFIX to each backup file made with ‘-b’.",
+      "isLong": false
+    },
+    {
+      "name": "T",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not treat the last operand specially when it is a directory or a symbolic link to a directory.",
+      "isLong": false
+    },
+    {
+      "name": "Z",
+      "argumentType": "NO_ARGUMENT",
+      "description": "This option functions similarly to the ‘restorecon’ command, by adjusting the SELinux security context according to the system default type for destination files and each created directory.",
+      "isLong": false
+    },
+    {
+      "name": "backup",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "b",
+      "description": "Make a backup of each file that would otherwise be overwritten or removed.",
+      "isLong": true
+    },
+    {
+      "name": "context",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "Z",
+      "description": "This option functions similarly to the ‘restorecon’ command, by adjusting the SELinux security context according to the system default type for destination files and each created directory.",
+      "isLong": true
+    },
+    {
+      "name": "force",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "prompts the user for whether to replace the file.  (You might own the file, or have write permission on its directory.)  If the response is not affirmative, the file is skipped.",
+      "isLong": true
+    },
+    {
+      "name": "interactive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "Prompt whether to overwrite each existing destination file, regardless of its permissions.  If the response is not affirmative, the file is skipped.  If you specify more than one of the ‘-i’, ‘-f’, ‘-n’ options, only the final one takes effect.",
+      "isLong": true
+    },
+    {
+      "name": "no-clobber",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Do not overwrite an existing file.  If you specify more than one of the ‘-i’, ‘-f’, ‘-n’ options, only the final one takes effect. This option is mutually exclusive with ‘-b’ or ‘--backup’ option.",
+      "isLong": true
+    },
+    {
+      "name": "no-target-directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "(‘-T’) option is not given, ‘mv’ moves each SOURCE file to the specified directory, using the SOURCEs’ names.",
+      "isLong": true
+    },
+    {
+      "name": "strip-trailing-slashes",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Remove any trailing slashes from each SOURCE argument.",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "Append SUFFIX to each backup file made with ‘-b’.",
+      "isLong": true
+    },
+    {
+      "name": "target-directory",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Specify the destination DIRECTORY.",
+      "isLong": true
+    },
+    {
+      "name": "update",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Do not move a non-directory that has an existing destination with the same or newer modification timestamp.  If the move is across file system boundaries, the comparison is to the source timestamp truncated to the resolutions of the destination file system and of the system calls used to update timestamps; this avoids duplicate work if several ‘mv -u’ commands are executed with the same source and destination.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the name of each file before moving it.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

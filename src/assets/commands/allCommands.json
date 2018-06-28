@@ -1,0 +1,22 @@
+[
+  {
+    "name": "mv",
+    "shortDescription": "move (rename) files"
+  },
+  {
+    "name": "mkdir",
+    "shortDescription": "make directories"
+  },
+  {
+    "name": "rmdir",
+    "shortDescription": "remove empty directories"
+  },
+  {
+    "name": "ls",
+    "shortDescription": "list directory contents"
+  },
+  {
+    "name": "touch",
+    "shortDescription": "change file timestamps"
+  }
+]

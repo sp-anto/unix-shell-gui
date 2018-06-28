@@ -1,11 +1,56 @@
 <!--This file is licensed under the terms of the Apache License 2.0-->
-<div>
-  <label for="command">Select Command: </label>
-  <select id="command" required [(ngModel)]="selectedCommand" (change)="fetchCommandDocumentation()">
-    <option *ngFor="let command of commands" [value]="command">{{command}}</option>
-  </select>
-</div>
 
-<div>
-  <pre>{{command | json}}</pre>
+<div class="container-fluid">
+  <div class="margin0">
+    <label for="command">Select what you want to do: </label>
+    <select id="command" class="form-control commandSelection" [(ngModel)]="selectedCommand"
+            (change)="fetchCommandDocumentation()">
+      <option [value]=""></option>
+      <option *ngFor="let command of commands" [value]="command.name">{{command.name + ' - ' +
+        command.shortDescription}}
+      </option>
+    </select>
+  </div>
+
+  <ngb-tabset *ngIf="command">
+    <ngb-tab *ngFor="let syntax of command.syntaxes">
+      <ng-template ngbTabTitle>
+        <div (click)="selectSyntax(syntax)"><b>{{syntax}}</b></div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+
+  <div *ngIf="command" class="optionWrapper">
+    <form #commandForm="ngForm">
+
+
+
+      <div *ngFor="let option of command.options;let i = index" class="options row margin0">
+        <div class="col-1">
+          <input type="checkbox" [(ngModel)]="option.isSelected" name="selected" (click)="optionClicked(option)"/>
+        </div>
+        <div class="col-2">
+          <div class="row"><b>{{(option.isLong ? '--' : '-') + option.name}}</b></div>
+          <div class="row" *ngIf="option.equivalent"><b>{{'-' + option.equivalent}}</b></div>
+        </div>
+        <div class="col-2">
+          <input class="form-control" name="{{'optValue' + i}}" type="text"
+                 *ngIf="option.argumentType !== 'NO_ARGUMENT'"
+                 [required]="option.argumentType === 'ARGUMENT_REQUIRED'" [(ngModel)]="option.value"
+                 [ngClass]="{'error' : option.isSelected && commandForm.controls['optValue' + i]?.errors}"
+                 [disabled]="!option.isSelected">
+          <small *ngIf="commandForm.controls['optValue' + i]?.errors" class="errorMsg">Input is required</small>
+        </div>
+        <div class="col-7">
+          {{option.description}}
+          <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="result">
+    <a href="javascript:void(0)" class="float-right"><i class="far fa-copy"></i></a>
+  </div>
+
 </div>

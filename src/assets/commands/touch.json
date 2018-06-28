@@ -1,0 +1,102 @@
+{
+  "name": "touch",
+  "shortDescription": "change file timestamps",
+  "longDescription": "Update the access and modification times of each FILE to the current time.",
+  "syntaxes": [
+    "touch [OPTION]... FILE..."
+  ],
+  "options": [
+    {
+      "name": "a",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Change the access timestamp only.",
+      "isLong": false
+    },
+    {
+      "name": "c",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not warn about or create files that do not exist.",
+      "isLong": false
+    },
+    {
+      "name": "d",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use TIME instead of the current time.  It can contain month names, time zones, ‘am’ and ‘pm’, ‘yesterday’, etc.  For example, ‘--date\u003d\"2004-02-27 14:19:13.489392193 +0530\"’ specifies the instant of time that is 489,392,193 nanoseconds after February 27, 2004 at 2:19:13 PM in a time zone that is 5 hours and 30 minutes east of UTC.    File systems that do not support high-resolution timestamps silently ignore any excess precision here.",
+      "isLong": false
+    },
+    {
+      "name": "f",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Ignored; for compatibility with BSD versions of ‘touch’.",
+      "isLong": false
+    },
+    {
+      "name": "h",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Attempt to change the timestamps of a symbolic link, rather than what the link refers to.  When using this option, empty files are not created, but option ‘-c’ must also be used to avoid warning about files that do not exist.  Not all systems support changing the timestamps of symlinks, since underlying system support for this action was not required until POSIX 2008.  Also, on some systems, the mere act of examining a symbolic link changes the access timestamp, such that only changes to the modification timestamp will persist long enough to be observable.  When coupled with option ‘-r’, a reference timestamp is taken from a symbolic link rather than the file it refers to.",
+      "isLong": false
+    },
+    {
+      "name": "m",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Change the modification timestamp only.",
+      "isLong": false
+    },
+    {
+      "name": "r",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use the times of the reference FILE instead of the current time. If this option is combined with the ‘--date\u003dTIME’ (‘-d TIME’) option, the reference FILE’s time is the origin for any relative TIMEs given, but is otherwise ignored.  For example, ‘-r foo -d \u0027-5 seconds\u0027’ specifies a timestamp equal to five seconds before the corresponding timestamp for ‘foo’.  If FILE is a symbolic link, the reference timestamp is taken from the target of the symlink, unless ‘-h’ was also in effect.",
+      "isLong": false
+    },
+    {
+      "name": "t",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use the argument (optional four-digit or two-digit years, months, days, hours, minutes, optional seconds) instead of the current time.  If the year is specified with only two digits, then CC is 20 for years in the range 0 ... 68, and 19 for years in 69 ... 99.  If no digits of the year are specified, the argument is interpreted as a date in the current year.  On the atypical systems that support leap seconds, SS may be ‘60’.",
+      "isLong": false
+    },
+    {
+      "name": "time",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Change the access timestamp only.",
+      "isLong": true
+    },
+    {
+      "name": "no-create",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Do not warn about or create files that do not exist.",
+      "isLong": true
+    },
+    {
+      "name": "date",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "Use TIME instead of the current time.  It can contain month names, time zones, ‘am’ and ‘pm’, ‘yesterday’, etc.  For example, ‘--date\u003d\"2004-02-27 14:19:13.489392193 +0530\"’ specifies the instant of time that is 489,392,193 nanoseconds after February 27, 2004 at 2:19:13 PM in a time zone that is 5 hours and 30 minutes east of UTC.    File systems that do not support high-resolution timestamps silently ignore any excess precision here.",
+      "isLong": true
+    },
+    {
+      "name": "reference",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "r",
+      "description": "Use the times of the reference FILE instead of the current time. If this option is combined with the ‘--date\u003dTIME’ (‘-d TIME’) option, the reference FILE’s time is the origin for any relative TIMEs given, but is otherwise ignored.  For example, ‘-r foo -d \u0027-5 seconds\u0027’ specifies a timestamp equal to five seconds before the corresponding timestamp for ‘foo’.  If FILE is a symbolic link, the reference timestamp is taken from the target of the symlink, unless ‘-h’ was also in effect.",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "description": "Attempt to change the timestamps of a symbolic link, rather than what the link refers to.  When using this option, empty files are not created, but option ‘-c’ must also be used to avoid warning about files that do not exist.  Not all systems support changing the timestamps of symlinks, since underlying system support for this action was not required until POSIX 2008.  Also, on some systems, the mere act of examining a symbolic link changes the access timestamp, such that only changes to the modification timestamp will persist long enough to be observable.  When coupled with option ‘-r’, a reference timestamp is taken from a symbolic link rather than the file it refers to.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

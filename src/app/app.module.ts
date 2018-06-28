@@ -11,7 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {CommandService} from './service/command.service';
 import {CommandDocumentationService} from './service/command-documentation.service';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import {CommandDocumentationService} from './service/command-documentation.servi
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [CommandService, CommandDocumentationService],
   bootstrap: [AppComponent]

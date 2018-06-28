@@ -13,23 +13,67 @@ import {Command} from './model/command';
 })
 export class AppComponent implements OnInit {
   private command: Command;
-  private commands: string[];
+  private commands: Command[];
   private selectedCommand: string;
+  private selectedSyntax: string;
 
   constructor(private commandService: CommandService) {
   }
 
   ngOnInit() {
-    this.commands = ['', 'mkdir', 'mv', 'touch'];
+    this.commandService.getAll()
+      .subscribe(commands => this.commands = commands);
     this.selectedCommand = '';
   }
 
   fetchCommandDocumentation(): void {
     this.command = null;
     if (this.selectedCommand !== '') {
-      this.commandService.getCommandByName(this.selectedCommand).then(command => {
-        this.command = command;
-      });
+      this.commandService.getCommandByName(this.selectedCommand)
+        .subscribe(command => {
+          this.command = command;
+          this.selectSyntax(command.syntaxes[0]);
+        });
+    }
+  }
+
+  removeDuplicateOptions(): void {
+    const optionsToRemove = [];
+    for (let i = 0; i < this.command.options.length; i++) {
+      const option = this.command.options[i];
+      if (this.isNotEquivalentOfOther(option)) {
+        optionsToRemove.push(i);
+      }
+    }
+
+    for (let i = optionsToRemove.length - 1 ; i >= 0; i--) {
+      this.command.options.splice(i, 1);
+
+    }
+  }
+
+  selectSyntax(syntax): void {
+    this.selectedSyntax = syntax;
+
+    for (const option of this.command.options) {
+      option.isSelected = false;
+      option.value = null;
+    }
+
+  }
+
+  isNotEquivalentOfOther(optionToCheck): boolean {
+    for (const option of this.command.options) {
+      if (optionToCheck.name === option.equivalent) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  optionClicked(option): void {
+    if (option.isSelected) {
+      option.value = null;
     }
   }
 

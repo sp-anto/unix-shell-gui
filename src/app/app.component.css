@@ -2,7 +2,41 @@
  *This file is licensed under the terms of the Apache License 2.0
  */
 
-pre {
-  color: forestgreen;
+div.result {
+  height: 50px;
   background-color: black;
+  color: forestgreen;
+}
+
+.margin0 {
+  margin: 0px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+div.options:nth-child(even):not(.hidden) {background: aliceblue}
+
+.optionWrapper {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.commandSelection {
+  display: initial;
+  width: auto;
+}
+
+input.error  {
+  border-color: #a94442;
+  border-left: 5px solid #a94442;
+  box-shadow: 0 1px 1px #a94442 inset, 0 0 8px #a94442;
+  outline: 0 none;
+}
+
+.errorMsg {
+  color: #a94442;
+}
+
+div.result a i {
+  font-size: x-large;
 }
