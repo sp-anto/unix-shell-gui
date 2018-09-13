@@ -16,15 +16,14 @@ div.result {
 
 div.options:nth-child(even):not(.hidden) {background: aliceblue}
 
-.optionWrapper {
-  height: 600px;
+#middleDiv {
   overflow-y: scroll;
 }
 
-.commandSelection {
-  display: initial;
-  width: auto;
-}
+/*.commandSelection {*/
+  /*display: initial;*/
+  /*width: auto;*/
+/*}*/
 
 input.error  {
   border-color: #a94442;
@@ -33,10 +32,66 @@ input.error  {
   outline: 0 none;
 }
 
-.errorMsg {
+.errorMsg, .invalid {
   color: #a94442;
 }
 
 div.result a i {
   font-size: x-large;
+}
+
+textarea {
+  resize: none;
+  font-size: 14px;
+  font-family: Consolas;
+  background-color: #0e0489;
+  color: white;
+  white-space: nowrap;
+}
+
+.no-left-padding {
+  padding-left: 0;
+}
+
+.no-left-padding button {
+  margin-bottom: 5px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+#topDiv, #bottomDiv, .nav-tabs .nav-link.active, div.argsRow, #selectDiv {
+  background-color: #efefef;
+}
+
+div.optionWrapper {
+  border: 1px solid;
+  border-color: #dee2e6 #dee2e6 #fff;
+  border-top: 0;
+}
+
+div.argsRow {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#selectDiv {
+  border: 1px solid #dee2e6;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.left-border {
+  border-left: 1px solid;
+}
+
+.valid-indicator {
+  font-size: 3em;
+}
+
+.valid {
+  color: #006e00;
 }

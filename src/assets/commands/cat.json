@@ -1,0 +1,87 @@
+{
+  "name": "cat",
+  "shortDescription": "concatenate files and print on the standard output",
+  "longDescription": "Concatenate FILE(s) to standard output.",
+  "syntaxes": [
+    "cat [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "e",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Equivalent to ‘-vE’.",
+      "isLong": false
+    },
+    {
+      "name": "t",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Equivalent to ‘-vT’.",
+      "isLong": false
+    },
+    {
+      "name": "u",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Ignored; for POSIX compatibility.",
+      "isLong": false
+    },
+    {
+      "name": "number-nonblank",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Number all nonempty output lines, starting with 1.",
+      "isLong": true
+    },
+    {
+      "name": "number",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Number all nonempty output lines, starting with 1.",
+      "isLong": true
+    },
+    {
+      "name": "squeeze-blank",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Suppress repeated adjacent blank lines; output just one empty line instead of several.",
+      "isLong": true
+    },
+    {
+      "name": "show-nonprinting",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Display control characters except for LFD and TAB using ‘^’ notation and precede characters that have the high bit set with ‘M-’.",
+      "isLong": true
+    },
+    {
+      "name": "show-ends",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "E",
+      "description": "Display a ‘$’ after the end of each line.",
+      "isLong": true
+    },
+    {
+      "name": "show-tabs",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "Display TAB characters as ‘^I’.",
+      "isLong": true
+    },
+    {
+      "name": "show-all",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "A",
+      "description": "Equivalent to ‘-vET’.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

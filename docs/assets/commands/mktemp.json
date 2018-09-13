@@ -1,0 +1,65 @@
+{
+  "name": "mktemp",
+  "shortDescription": "create a temporary file or directory",
+  "longDescription": "Create  a  temporary file or directory, safely, and print its name.  TEMPLATE must contain at least 3 consecu‐ tive \u0027X\u0027s in last component.  If TEMPLATE is not specified,  use  tmp.XXXXXXXXXX,  and  --tmpdir  is  implied. Files are created u+rw, and directories u+rwx, minus umask restrictions.",
+  "syntaxes": [
+    "mktemp [OPTION]... [TEMPLATE]"
+  ],
+  "options": [
+    {
+      "name": "t",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Treat TEMPLATE as a single file relative to the value of ‘TMPDIR’ if available, or to the directory specified by ‘-p’, otherwise to ‘/tmp’.  TEMPLATE must not contain slashes.  This option is deprecated; the use of ‘-p’ without ‘-t’ offers better defaults (by favoring the command line over ‘TMPDIR’) and more flexibility (by allowing intermediate directories).",
+      "isLong": false
+    },
+    {
+      "name": "V",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Create a directory rather than a file.  The directory will have read, write, and search permissions for the current user, but no permissions for the group or others; these permissions are reduced if the current umask is more restrictive.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Suppress diagnostics about failure to create a file or directory. The exit status will still reflect whether a file was created.",
+      "isLong": true
+    },
+    {
+      "name": "dry-run",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Generate a temporary name that does not name an existing file, without changing the file system contents.  Using the output of this command to create a new file is inherently unsafe, as there is a window of time between generating the name and using it where another process can create an object by the same name.",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Append SUFFIX to the TEMPLATE.  SUFFIX must not contain slash.  If ‘--suffix’ is specified, TEMPLATE must end in ‘X’; if it is not specified, then an appropriate ‘--suffix’ is inferred by finding the last ‘X’ in TEMPLATE.  This option exists for use with the default TEMPLATE and for the creation of a SUFFIX that starts with ‘X’.",
+      "isLong": true
+    },
+    {
+      "name": "tmpdir",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "p",
+      "description": "Treat TEMPLATE relative to the directory DIR.  If DIR is not specified (only possible with the long option ‘--tmpdir’) or is the empty string, use the value of ‘TMPDIR’ if available, otherwise use ‘/tmp’.  If this is specified, TEMPLATE must not be absolute. However, TEMPLATE can still contain slashes, although intermediate directories must already exist.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

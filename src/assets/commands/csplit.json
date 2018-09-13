@@ -1,0 +1,75 @@
+{
+  "name": "csplit",
+  "shortDescription": "split a file into sections determined by context lines",
+  "longDescription": "Output  pieces  of  FILE  separated by PATTERN(s) to files \u0027xx00\u0027, \u0027xx01\u0027, ..., and output byte counts of each piece to standard output.",
+  "syntaxes": [
+    "csplit [OPTION]... FILE PATTERN..."
+  ],
+  "options": [
+    {
+      "name": "digits",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "n",
+      "description": "Use output file names containing numbers that are DIGITS digits long instead of the default 2.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Do not print counts of output file sizes.",
+      "isLong": true
+    },
+    {
+      "name": "silent",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Do not print counts of output file sizes.",
+      "isLong": true
+    },
+    {
+      "name": "keep-files",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "k",
+      "description": "Do not remove output files when errors are encountered.",
+      "isLong": true
+    },
+    {
+      "name": "elide-empty-files",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Suppress the generation of zero-length output files.  (In cases where the section delimiters of the input file are supposed to mark the first lines of each of the sections, the first output file will generally be a zero-length file unless you use this option.)  The output file sequence numbers always run consecutively starting from 0, even when this option is specified.",
+      "isLong": true
+    },
+    {
+      "name": "prefix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Use PREFIX as the output file name prefix.",
+      "isLong": true
+    },
+    {
+      "name": "suffix-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "b",
+      "description": "Use FORMAT as the output file name suffix.  When this option is specified, the suffix string must include exactly one ‘printf(3)’-style conversion specification, possibly including format specification flags, a field width, a precision specifications, or all of these kinds of modifiers.  The format letter must convert a binary unsigned integer argument to readable form.  The format letters ‘d’ and ‘i’ are aliases for ‘u’, and the ‘u’, ‘o’, ‘x’, and ‘X’ conversions are allowed.  The entire FORMAT is given (with the current output file number) to ‘sprintf(3)’ to form the file name suffixes for each of the individual output files in turn.  If this option is used, the ‘--digits’ option is ignored.",
+      "isLong": true
+    },
+    {
+      "name": "suppress-matched",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not output lines matching the specified PATTERN.  I.e., suppress the boundary line from the start of the second and subsequent splits.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

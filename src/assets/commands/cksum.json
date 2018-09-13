@@ -1,0 +1,21 @@
+{
+  "name": "cksum",
+  "shortDescription": "checksum and count the bytes in a file",
+  "longDescription": "Print CRC checksum and byte counts of each FILE.",
+  "syntaxes": [
+    "cksum [FILE]...",
+    "cksum [OPTION]"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

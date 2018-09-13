@@ -7,18 +7,6 @@
   ],
   "options": [
     {
-      "name": "p",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Remove DIRECTORY, then try to remove each component of DIRECTORY. So, for example, ‘rmdir -p a/b/c’ is similar to ‘rmdir a/b/c a/b a’.  As such, it fails if any of those directories turns out not to be empty.  Use the ‘--ignore-fail-on-non-empty’ option to make it so such a failure does not evoke a diagnostic and does not cause ‘rmdir’ to exit unsuccessfully.",
-      "isLong": false
-    },
-    {
-      "name": "v",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Give a diagnostic for each successful removal.  DIRECTORY is removed.",
-      "isLong": false
-    },
-    {
       "name": "ignore-fail-on-non-empty",
       "argumentType": "NO_ARGUMENT",
       "description": "Ignore each failure to remove a directory that is solely because the directory is non-empty.",

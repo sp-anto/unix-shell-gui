@@ -1,30 +1,81 @@
 <!--This file is licensed under the terms of the Apache License 2.0-->
 
-<div class="container-fluid">
-  <div class="margin0">
-    <label for="command">Select what you want to do: </label>
-    <select id="command" class="form-control commandSelection" [(ngModel)]="selectedCommand"
-            (change)="fetchCommandDocumentation()">
-      <option [value]=""></option>
-      <option *ngFor="let command of commands" [value]="command.name">{{command.name + ' - ' +
-        command.shortDescription}}
-      </option>
-    </select>
+<div class="container-fluid" id="topDiv">
+  <div class="row">
+    <div class="col-12">
+      <div class="float-left">
+        <h5>Unix Command Builder</h5>
+      </div>
+
+      <div ngbDropdown class="d-inline-block float-right" autoClose="false" placement="bottom-right">
+        <button class="btn btn-primary btn-sm" href="javascript:void(0)" id="dropdownBasic1" ngbDropdownToggle>Settings <i class="fas fa-cog"></i></button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item" (click)="setSettings('addComments')"><i class="far fa-square" *ngIf="!settings.addComments"></i><i class="far fa-check-square" *ngIf="settings.addComments"></i> Add comments</button>
+          <button class="dropdown-item" (click)="setSettings('useLongOptions')"><i class="far fa-square" *ngIf="!settings.useLongOptions"></i><i class="far fa-check-square" *ngIf="settings.useLongOptions"></i> Use long options</button>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <ngb-tabset *ngIf="command">
-    <ngb-tab *ngFor="let syntax of command.syntaxes">
-      <ng-template ngbTabTitle>
-        <div (click)="selectSyntax(syntax)"><b>{{syntax}}</b></div>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+<form #commandForm="ngForm">
+  <div class="container-fluid" id="middleDiv">
+    <div class="margin0 row" id="selectDiv">
+      <div class="col-5">
+        <div class="form-group">
+          <label for="command">Select command/operator/structure: </label>
+          <select id="command" class="form-control" [(ngModel)]="selectedCommand" [ngModelOptions]="{standalone: true}"
+                  (change)="fetchCommandDocumentation();">
+            <option [value]=""></option>
+            <optgroup label="Structure">
+              <option *ngFor="let structure of structures" [value]="structure.name">{{structure.name}}</option>
+            </optgroup>
+            <optgroup label="Operator">
+              <option *ngFor="let operator of operators" [value]="operator.name">{{operator.name}}</option>
+            </optgroup>
+            <optgroup label="Commands">
+              <option *ngFor="let command of commands" [value]="command.name">{{command.name + ' - ' +
+                command.shortDescription}}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="col-5 left-border"><label>{{command ? command.longDescription : ''}}{{operator ? operator.description : ''}}</label></div>
+      <div class="col-2 left-border d-flex justify-content-center align-items-center">
+        <div>
+          <i *ngIf="(command && commandForm.form.valid) || operator" class="fas fa-check valid-indicator valid"></i>
+          <i *ngIf="command && !commandForm.form.valid" class="fas fa-times valid-indicator invalid"></i>
+        </div>
+        <div>
+          <span *ngIf="command && commandForm.form.valid || operator" class="valid">Command is valid. Locate the cursor at the position you want to enter the command.</span>
+          <span *ngIf="command && !commandForm.form.valid" class="invalid">Command is not valid</span>
+        </div>
+      </div>
+    </div>
 
-  <div *ngIf="command" class="optionWrapper">
-    <form #commandForm="ngForm">
+    <ngb-tabset *ngIf="command">
+      <ngb-tab *ngFor="let syntax of command.syntaxes">
+        <ng-template ngbTabTitle>
+          <div (click)="selectSyntax(syntax)"><b>{{syntax}}</b></div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
 
-
-
+    <div *ngIf="command" class="optionWrapper">
+      <div class="argsRow row">
+        <div class="col-3" *ngFor="let argument of arguments">
+          <label placement="right-bottom" ngbTooltip="{{(argument.isOptional ? 'Argument is optional.' : 'Argument is required.') + (argument.isMultiple ? ' You can add many argments separated by space character.' : '')}}">
+            <b>{{argument.name}}</b>
+            <i class="fas fa-question-circle"></i>
+          </label>
+          <input type="text" name="{{argument.name}}"
+                 class="form-control col-12"
+                 [required]="!argument.isOptional" [(ngModel)]="argument.value"
+                 [ngClass]="{'error' : !argument.isOptional && commandForm.controls[argument.name]?.errors}"/>
+          <small *ngIf="commandForm.controls[argument.name]?.errors" class="errorMsg">Input is required</small>
+        </div>
+      </div>
       <div *ngFor="let option of command.options;let i = index" class="options row margin0">
         <div class="col-1">
           <input type="checkbox" [(ngModel)]="option.isSelected" name="selected" (click)="optionClicked(option)"/>
@@ -46,11 +97,24 @@
           <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 
-  <div class="result">
-    <a href="javascript:void(0)" class="float-right"><i class="far fa-copy"></i></a>
-  </div>
+  <div class="fixed-bottom" id="bottomDiv">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-10">
+          <textarea class="col-12" rows="7" [(ngModel)]="console" id="console" [ngModelOptions]="{standalone: true}"></textarea>
 
-</div>
+        </div>
+        <div class="col-2 no-left-padding">
+          <button class="btn btn-primary col-12" (click)="insertCommandToConsole()" [disabled]="(command && !commandForm.form.valid) || (!command && !operator)"><i class="fas fa-i-cursor"></i> Insert</button>
+          <button class="btn btn-primary col-12" (click)="copyCurrentCommand()" [disabled]="(command && !commandForm.form.valid) || (!command && !operator)"><i class="far fa-clone"></i> Copy current command</button>
+          <button class="btn btn-primary col-12" (click)="copyConsole(console)"><i class="far fa-clone"></i> Copy console</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<textarea id="copyHelper" style="position: fixed;top: -300px;left: -300px"></textarea>

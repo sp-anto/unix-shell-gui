@@ -1,0 +1,27 @@
+{
+  "name": "nice",
+  "shortDescription": "run a program with modified scheduling priority",
+  "longDescription": "Run  COMMAND  with an adjusted niceness, which affects process scheduling.  With no COMMAND, print the current niceness.  Niceness values range from -20 (most favorable to the  process)  to  19  (least  favorable  to  the process).",
+  "syntaxes": [
+    "nice [OPTION] [COMMAND [ARG]...]"
+  ],
+  "options": [
+    {
+      "name": "adjustment",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "n",
+      "description": "Add ADJUSTMENT instead of 10 to the command’s niceness.  If ADJUSTMENT is negative and you lack appropriate privileges, ‘nice’ issues a warning but otherwise acts as if you specified a zero adjustment.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

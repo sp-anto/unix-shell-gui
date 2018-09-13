@@ -1,0 +1,43 @@
+{
+  "name": "stty",
+  "shortDescription": "change and print terminal line settings",
+  "longDescription": "Print or change terminal characteristics.",
+  "syntaxes": [
+    "stty [-F DEVICE | --file\u003dDEVICE] [SETTING]...",
+    "stty [-F DEVICE | --file\u003dDEVICE] [-a|--all]",
+    "stty [-F DEVICE | --file\u003dDEVICE] [-g|--save]"
+  ],
+  "options": [
+    {
+      "name": "all",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "description": "Print all current settings in human-readable form.  This option may not be used in combination with any line settings.",
+      "isLong": true
+    },
+    {
+      "name": "save",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "g",
+      "description": "Print all current settings in a form that can be used as an argument to another ‘stty’ command to restore the current settings. This option may not be used in combination with any line settings.",
+      "isLong": true
+    },
+    {
+      "name": "file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "F",
+      "description": "Set the line opened by the file name specified in DEVICE instead of the tty line connected to standard input.  This option is necessary because opening a POSIX tty requires use of the ‘O_NONDELAY’ flag to prevent a POSIX tty from blocking until the carrier detect line is high if the ‘clocal’ flag is not set.  Hence, it is not always possible to allow the shell to open the device in the traditional manner.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

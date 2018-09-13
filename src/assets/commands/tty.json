@@ -1,0 +1,34 @@
+{
+  "name": "tty",
+  "shortDescription": "print the file name of the terminal connected to standard input",
+  "longDescription": "Print the file name of the terminal connected to standard input.",
+  "syntaxes": [
+    "tty [OPTION]..."
+  ],
+  "options": [
+    {
+      "name": "silent",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Print nothing; only return an exit status.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Print nothing; only return an exit status.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

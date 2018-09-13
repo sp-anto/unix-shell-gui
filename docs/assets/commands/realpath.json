@@ -1,0 +1,88 @@
+{
+  "name": "realpath",
+  "shortDescription": "print the resolved path",
+  "longDescription": "Print the resolved absolute file name; all but the last component must exist",
+  "syntaxes": [
+    "realpath [OPTION]... FILE..."
+  ],
+  "options": [
+    {
+      "name": "canonicalize-existing",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "e",
+      "description": "Ensure that all components of the specified file names exist.  If any component is missing or unavailable, ‘realpath’ will output a diagnostic unless the ‘-q’ option is specified, and exit with a nonzero exit code.  A trailing slash requires that the name resolve to a directory.",
+      "isLong": true
+    },
+    {
+      "name": "canonicalize-missing",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "description": "If any component of a specified file name is missing or unavailable, treat it as a directory.",
+      "isLong": true
+    },
+    {
+      "name": "relative-to",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Print the resolved file names relative to the specified directory. Note this option honors the ‘-m’ and ‘-e’ options pertaining to file existence.",
+      "isLong": true
+    },
+    {
+      "name": "relative-base",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Print the resolved file names as relative _if_ the files are descendants of DIR.  Otherwise, print the resolved file names as absolute.  Note this option honors the ‘-m’ and ‘-e’ options pertaining to file existence.  For details about combining ‘--relative-to’ and ‘--relative-base’, *note Realpath usage examples::.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Suppress diagnostic messages for specified file names.",
+      "isLong": true
+    },
+    {
+      "name": "strip",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Do not resolve symbolic links.  Only resolve references to ‘/./’, ‘/../’ and remove extra ‘/’ characters.  When combined with the ‘-m’ option, realpath operates only on the file name, and does not touch any actual file.",
+      "isLong": true
+    },
+    {
+      "name": "no-symlinks",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Do not resolve symbolic links.  Only resolve references to ‘/./’, ‘/../’ and remove extra ‘/’ characters.  When combined with the ‘-m’ option, realpath operates only on the file name, and does not touch any actual file.",
+      "isLong": true
+    },
+    {
+      "name": "zero",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Output a zero byte (ASCII NUL) at the end of each line, rather than a newline.  This option enables other programs to parse the output even when that output would contain data with embedded newlines.",
+      "isLong": true
+    },
+    {
+      "name": "logical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "Symbolic links are resolved in the specified file names, but they are resolved after any subsequent ‘..’ components are processed.",
+      "isLong": true
+    },
+    {
+      "name": "physical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "description": "Symbolic links are resolved in the specified file names, and they are resolved before any subsequent ‘..’ components are processed. This is the default mode of operation.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

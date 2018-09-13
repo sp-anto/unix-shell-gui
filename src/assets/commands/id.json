@@ -1,0 +1,74 @@
+{
+  "name": "id",
+  "shortDescription": "print real and effective user and group IDs",
+  "longDescription": "Print user and group information for the specified USER, or (when USER omitted) for the current user.",
+  "syntaxes": [
+    "id [OPTION]... [USER]"
+  ],
+  "options": [
+    {
+      "name": "a",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "context",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "Z",
+      "description": "Print only the security context of the process, which is generally the user’s security context inherited from the parent process.  If neither SELinux or SMACK is enabled then print a warning and set the exit status to 1.",
+      "isLong": true
+    },
+    {
+      "name": "group",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "g",
+      "description": "Print only the group ID.",
+      "isLong": true
+    },
+    {
+      "name": "groups",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "G",
+      "description": "Print only the group ID and the supplementary groups.",
+      "isLong": true
+    },
+    {
+      "name": "name",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Print the user or group name instead of the ID number.  Requires ‘-u’, ‘-g’, or ‘-G’.",
+      "isLong": true
+    },
+    {
+      "name": "real",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Print the real, instead of effective, user or group ID.  Requires ‘-u’, ‘-g’, or ‘-G’.",
+      "isLong": true
+    },
+    {
+      "name": "user",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Print only the user ID.",
+      "isLong": true
+    },
+    {
+      "name": "zero",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit output items with NUL characters.  This option is not permitted when using the default format.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "stat",
+  "shortDescription": "display file or file system status",
+  "longDescription": "Display file or file system status.",
+  "syntaxes": [
+    "stat [OPTION]... FILE..."
+  ],
+  "options": [
+    {
+      "name": "dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "Change how ‘stat’ treats symbolic links.  With this option, ‘stat’ acts on the file referenced by each symbolic link argument. Without it, ‘stat’ acts on any symbolic link argument directly.",
+      "isLong": true
+    },
+    {
+      "name": "file-system",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Report information about the file systems where the given files are located instead of information about the files themselves.  This option implies the ‘-L’ option.",
+      "isLong": true
+    },
+    {
+      "name": "format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "c",
+      "description": "Use FORMAT rather than the default format.  FORMAT is automatically newline-terminated, so running a command like the following with two or more FILE operands produces a line of output for each operand: $ stat --format\u003d%d:%i / /usr 2050:2 2057:2",
+      "isLong": true
+    },
+    {
+      "name": "printf",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use FORMAT rather than the default format.  Like ‘--format’, but interpret backslash escapes, and do not output a mandatory trailing newline.  If you want a newline, include ‘\\n’ in the FORMAT. Here’s how you would use ‘--printf’ to print the device and inode numbers of ‘/’ and ‘/usr’: $ stat --printf\u003d\u0027%d:%i\\n\u0027 / /usr 2050:2 2057:2",
+      "isLong": true
+    },
+    {
+      "name": "terse",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "description": "Print the information in terse form, suitable for parsing by other programs.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

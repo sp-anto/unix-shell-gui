@@ -1,0 +1,21 @@
+{
+  "name": "dd",
+  "shortDescription": "convert and copy a file",
+  "longDescription": "Copy a file, converting and formatting according to the operands.",
+  "syntaxes": [
+    "dd [OPERAND]...",
+    "dd OPTION"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

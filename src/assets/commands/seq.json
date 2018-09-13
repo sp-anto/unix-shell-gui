@@ -1,0 +1,43 @@
+{
+  "name": "seq",
+  "shortDescription": "print a sequence of numbers",
+  "longDescription": "Print numbers from FIRST to LAST, in steps of INCREMENT.",
+  "syntaxes": [
+    "seq [OPTION]... LAST",
+    "seq [OPTION]... FIRST LAST",
+    "seq [OPTION]... FIRST INCREMENT LAST"
+  ],
+  "options": [
+    {
+      "name": "equal-width",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "w",
+      "description": "Print all numbers with the same width, by padding with leading zeros.  FIRST, STEP, and LAST should all use a fixed point decimal representation.  (To have other kinds of padding, use ‘--format’).",
+      "isLong": true
+    },
+    {
+      "name": "format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Print all numbers using FORMAT.  FORMAT must contain exactly one of the ‘printf’-style floating point conversion specifications ‘%a’, ‘%e’, ‘%f’, ‘%g’, ‘%A’, ‘%E’, ‘%F’, ‘%G’.  The ‘%’ may be followed by zero or more flags taken from the set ‘-+#0 \u0027’, then an optional width containing one or more digits, then an optional precision consisting of a ‘.’ followed by zero or more digits.  FORMAT may also contain any number of ‘%%’ conversion specifications.  All conversion specifications have the same meaning as with ‘printf’.",
+      "isLong": true
+    },
+    {
+      "name": "separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Separate numbers with STRING; default is a newline.  The output always terminates with a newline.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

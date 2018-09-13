@@ -1,0 +1,21 @@
+{
+  "name": "unlink",
+  "shortDescription": "call the unlink function to remove the specified file",
+  "longDescription": "Call the unlink function to remove the specified FILE.",
+  "syntaxes": [
+    "unlink FILE",
+    "unlink OPTION"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

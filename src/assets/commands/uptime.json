@@ -1,0 +1,34 @@
+{
+  "name": "uptime",
+  "shortDescription": "Tell how long the system has been running.",
+  "longDescription": "uptime  gives a one line display of the following information.  The current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and  15  min‐ utes.",
+  "syntaxes": [
+    "uptime [options]"
+  ],
+  "options": [
+    {
+      "name": "pretty",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "isLong": true
+    },
+    {
+      "name": "since",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "isLong": true
+    }
+  ]
+}

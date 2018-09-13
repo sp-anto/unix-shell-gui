@@ -7,30 +7,6 @@
   ],
   "options": [
     {
-      "name": "p",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Make any missing parent directories for each argument, setting their file permission bits to the umask modified by ‘u+wx’.  Ignore existing parent directories, and do not change their file permission bits.",
-      "isLong": false
-    },
-    {
-      "name": "m",
-      "argumentType": "ARGUMENT_REQUIRED",
-      "description": "Set the file permission bits of created directories to MODE, which uses the same syntax as in ‘chmod’ and uses ‘a\u003drwx’ (read, write and execute allowed for everyone) for the point of the departure.",
-      "isLong": false
-    },
-    {
-      "name": "v",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Print a message for each created directory.  This is most useful with ‘--parents’.",
-      "isLong": false
-    },
-    {
-      "name": "Z",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Without a specified CONTEXT, adjust the SELinux security context according to the system default type for destination files, similarly to the ‘restorecon’ command.  The long form of this option with a specific context specified, will set the context for newly created files only.  With a specified context, if both SELinux and SMACK are disabled, a warning is issued.",
-      "isLong": false
-    },
-    {
       "name": "context",
       "argumentType": "OPTIONAL_ARGUMENT",
       "equivalent": "Z",

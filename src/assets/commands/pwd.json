@@ -1,0 +1,34 @@
+{
+  "name": "pwd",
+  "shortDescription": "print name of current/working directory",
+  "longDescription": "Print the full filename of the current working directory.",
+  "syntaxes": [
+    "pwd [OPTION]..."
+  ],
+  "options": [
+    {
+      "name": "logical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "If the contents of the environment variable ‘PWD’ provide an absolute name of the current directory with no ‘.’ or ‘..’ components, but possibly with symbolic links, then output those contents.  Otherwise, fall back to default ‘-P’ handling.",
+      "isLong": true
+    },
+    {
+      "name": "physical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "description": "Print a fully resolved name for the current directory.  That is, all components of the printed name will be actual directory names—none will be symbolic links.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "numfmt",
+  "shortDescription": "Convert numbers from/to human-readable strings",
+  "longDescription": "Reformat NUMBER(s), or the numbers from standard input if none are specified.",
+  "syntaxes": [
+    "numfmt [OPTION]... [NUMBER]..."
+  ],
+  "options": [
+    {
+      "name": "from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Auto-scales input numbers according to UNIT.  See UNITS below.  The default is no scaling, meaning suffixes (e.g.  ‘M’, ‘G’) will trigger an error.",
+      "isLong": true
+    },
+    {
+      "name": "from-unit",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Specify the input unit size (instead of the default 1).  Use this option when the input numbers represent other units (e.g.  if the input number ‘10’ represents 10 units of 512 bytes, use ‘--from-unit\u003d512’).  Suffixes are handled as with ‘--from\u003dauto’.",
+      "isLong": true
+    },
+    {
+      "name": "to",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Auto-scales output numbers according to UNIT.  See _Units_ below. The default is no scaling, meaning all the digits of the number are printed.",
+      "isLong": true
+    },
+    {
+      "name": "to-unit",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Specify the output unit size (instead of the default 1).  Use this option when the output numbers represent other units (e.g.  to represent ‘4,000,000’ bytes in blocks of 1KB, use ‘--to\u003dsi --to-unit\u003d1000’).  Suffixes are handled as with ‘--from\u003dauto’.",
+      "isLong": true
+    },
+    {
+      "name": "round",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "When converting number representations, round the number according to METHOD, which can be ‘up’, ‘down’, ‘from-zero’ (the default), ‘towards-zero’, ‘nearest’.",
+      "isLong": true
+    },
+    {
+      "name": "padding",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Pad the output numbers to N characters, by adding spaces.  If N is a positive number, numbers will be right-aligned.  If N is a negative number, numbers will be left-aligned.  By default, numbers are automatically aligned based on the input line’s width (only with the default delimiter).",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Add ‘SUFFIX’ to the output numbers, and accept optional ‘SUFFIX’ in input numbers.",
+      "isLong": true
+    },
+    {
+      "name": "grouping",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Group digits in output numbers according to the current locale’s grouping rules (e.g _Thousands Separator_ character, commonly ‘.’ (dot) or ‘,’ comma).  This option has no effect in ‘POSIX/C’ locale.",
+      "isLong": true
+    },
+    {
+      "name": "delimiter",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "Use the character D as input field separator (default: whitespace). _Note_: Using non-default delimiter turns off automatic padding.",
+      "isLong": true
+    },
+    {
+      "name": "field",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Convert the number in input field FIELDS (default: 1).  FIELDS supports ‘cut’ style field ranges:",
+      "isLong": true
+    },
+    {
+      "name": "debug",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print (to standard error) warning messages about possible erroneous usage.",
+      "isLong": true
+    },
+    {
+      "name": "-debug",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "header",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Print the first N (default: 1) lines without any conversion.",
+      "isLong": true
+    },
+    {
+      "name": "format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use printf-style floating FORMAT string.  The FORMAT string must contain one ‘%f’ directive, optionally with ‘\u0027’, ‘-’, ‘0’, width or precision modifiers.  The ‘\u0027’ modifier will enable ‘--grouping’, the ‘-’ modifier will enable left-aligned ‘--padding’ and the width modifier will enable right-aligned ‘--padding’.  The ‘0’ width modifier (without the ‘-’ modifier) will generate leading zeros on the number, up to the specified width.  A precision specification like ‘%.1f’ will override the precision determined from the input data or set due to ‘--to’ option auto scaling.",
+      "isLong": true
+    },
+    {
+      "name": "invalid",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "The default action on input errors is to exit immediately with status code 2.  ‘--invalid\u003d‘abort’’ explicitly specifies this default mode.  With a MODE of ‘fail’, print a warning for _each_ conversion error, and exit with status 2.  With a MODE of ‘warn’, exit with status 0, even in the presence of conversion errors, and with a MODE of ‘ignore’ do not even print diagnostics.",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).  Note with ‘-z’ the newline character is treated as a field separator.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

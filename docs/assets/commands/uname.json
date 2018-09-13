@@ -1,0 +1,95 @@
+{
+  "name": "uname",
+  "shortDescription": "print system information",
+  "longDescription": "Print certain system information.  With no OPTION, same as -s.",
+  "syntaxes": [
+    "uname [OPTION]..."
+  ],
+  "options": [
+    {
+      "name": "all",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "description": "Print all of the below information, except omit the processor type and the hardware platform name if they are unknown.",
+      "isLong": true
+    },
+    {
+      "name": "kernel-name",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Print the kernel name.  POSIX 1003.1-2001 (*note Standards conformance::) calls this “the implementation of the operating system”, because the POSIX specification itself has no notion of “kernel”.  The kernel name might be the same as the operating system name printed by the ‘-o’ or ‘--operating-system’ option, but it might differ.  Some operating systems (e.g., FreeBSD, HP-UX) have the same name as their underlying kernels; others (e.g., GNU/Linux, Solaris) do not.",
+      "isLong": true
+    },
+    {
+      "name": "sysname",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "nodename",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Print the network node hostname.",
+      "isLong": true
+    },
+    {
+      "name": "kernel-release",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Print the kernel release.",
+      "isLong": true
+    },
+    {
+      "name": "release",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "isLong": true
+    },
+    {
+      "name": "kernel-version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the kernel version.",
+      "isLong": true
+    },
+    {
+      "name": "machine",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "description": "Print the machine hardware name (sometimes called the hardware class or hardware type).",
+      "isLong": true
+    },
+    {
+      "name": "processor",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "description": "Print the processor type (sometimes called the instruction set architecture or ISA). Print ‘unknown’ if this information is not available.  Note this is non-portable (even across GNU/Linux distributions).",
+      "isLong": true
+    },
+    {
+      "name": "hardware-platform",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "Print the hardware platform name (sometimes called the hardware implementation).  Print ‘unknown’ if this information is not available.  Note this is non-portable (even across GNU/Linux distributions).",
+      "isLong": true
+    },
+    {
+      "name": "operating-system",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "o",
+      "description": "Print the name of the operating system.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "link",
+  "shortDescription": "call the link function to create a link to a file",
+  "longDescription": "Call the link function to create a link named FILE2 to an existing FILE1.",
+  "syntaxes": [
+    "link FILE1 FILE2",
+    "link OPTION"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "wc",
+  "shortDescription": "print newline, word, and byte counts for each file",
+  "longDescription": "Print  newline,  word,  and byte counts for each FILE, and a total line if more than one FILE is specified.  A word is a non-zero-length sequence of characters delimited by white space.",
+  "syntaxes": [
+    "wc [OPTION]... [FILE]...",
+    "wc [OPTION]... --files0-from\u003dF"
+  ],
+  "options": [
+    {
+      "name": "bytes",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Print only the byte counts.",
+      "isLong": true
+    },
+    {
+      "name": "chars",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "description": "Print only the character counts.",
+      "isLong": true
+    },
+    {
+      "name": "lines",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "description": "Print only the newline counts.",
+      "isLong": true
+    },
+    {
+      "name": "words",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "w",
+      "description": "Print only the word counts.",
+      "isLong": true
+    },
+    {
+      "name": "files0-from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Disallow processing files named on the command line, and instead process those named in file FILE; each name being terminated by a zero byte (ASCII NUL). This is useful when the list of file names is so long that it may exceed a command line length limitation.  In such cases, running ‘wc’ via ‘xargs’ is undesirable because it splits the list into pieces and makes ‘wc’ print a total for each sublist rather than for the entire list.  One way to produce a list of ASCII NUL terminated file names is with GNU ‘find’, using its ‘-print0’ predicate.  If FILE is ‘-’ then the ASCII NUL terminated file names are read from standard input.",
+      "isLong": true
+    },
+    {
+      "name": "max-line-length",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "Print only the maximum display widths.  Tabs are set at every 8th column.  Display widths of wide characters are considered. Non-printable characters are given 0 width.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

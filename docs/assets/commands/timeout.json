@@ -1,0 +1,47 @@
+{
+  "name": "timeout",
+  "shortDescription": "run a command with a time limit",
+  "longDescription": "Start COMMAND, and kill it if still running after DURATION.",
+  "syntaxes": [
+    "timeout [OPTION] DURATION COMMAND [ARG]...",
+    "timeout [OPTION]"
+  ],
+  "options": [
+    {
+      "name": "kill-after",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "k",
+      "description": "Ensure the monitored COMMAND is killed by also sending a ‘KILL’ signal, after the specified DURATION.  Without this option, if the selected signal proves not to be fatal, ‘timeout’ does not kill the COMMAND.",
+      "isLong": true
+    },
+    {
+      "name": "signal",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Send this SIGNAL to COMMAND on timeout, rather than the default ‘TERM’ signal.  SIGNAL may be a name like ‘HUP’ or a number.",
+      "isLong": true
+    },
+    {
+      "name": "foreground",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Don’t create a separate background program group, so that the managed COMMAND can use the foreground TTY normally.  This is needed to support timing out commands not started directly from an interactive shell, in two situations. 1. COMMAND is interactive and needs to read from the terminal for example 2. the user wants to support sending signals directly to COMMAND from the terminal (like Ctrl-C for example)",
+      "isLong": true
+    },
+    {
+      "name": "preserve-status",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Return the exit status of the managed COMMAND on timeout, rather than a specific exit status indicating a timeout.  This is useful if the managed COMMAND supports running for an indeterminate amount of time.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

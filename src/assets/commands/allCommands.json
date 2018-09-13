@@ -1,9 +1,5 @@
 [
   {
-    "name": "mv",
-    "shortDescription": "move (rename) files"
-  },
-  {
     "name": "mkdir",
     "shortDescription": "make directories"
   },
@@ -16,7 +12,319 @@
     "shortDescription": "list directory contents"
   },
   {
+    "name": "cat",
+    "shortDescription": "concatenate files and print on the standard output"
+  },
+  {
+    "name": "mv",
+    "shortDescription": "move (rename) files"
+  },
+  {
     "name": "touch",
     "shortDescription": "change file timestamps"
+  },
+  {
+    "name": "cp",
+    "shortDescription": "copy files and directories"
+  },
+  {
+    "name": "rm",
+    "shortDescription": "remove files or directories"
+  },
+  {
+    "name": "diff",
+    "shortDescription": "compare files line by line"
+  },
+  {
+    "name": "wc",
+    "shortDescription": "print newline, word, and byte counts for each file"
+  },
+  {
+    "name": "pwd",
+    "shortDescription": "print name of current/working directory"
+  },
+  {
+    "name": "who",
+    "shortDescription": "show who is logged on"
+  },
+  {
+    "name": "kill",
+    "shortDescription": "send a signal to a process"
+  },
+  {
+    "name": "date",
+    "shortDescription": "print or set the system date and time"
+  },
+  {
+    "name": "chown",
+    "shortDescription": "change file owner and group"
+  },
+  {
+    "name": "base32",
+    "shortDescription": "base32 encode/decode data and print to standard output"
+  },
+  {
+    "name": "base64",
+    "shortDescription": "base64 encode/decode data and print to standard output"
+  },
+  {
+    "name": "cksum",
+    "shortDescription": "checksum and count the bytes in a file"
+  },
+  {
+    "name": "comm",
+    "shortDescription": "compare two sorted files line by line"
+  },
+  {
+    "name": "chcon",
+    "shortDescription": "change file security context"
+  },
+  {
+    "name": "chgrp",
+    "shortDescription": "change group ownership"
+  },
+  {
+    "name": "csplit",
+    "shortDescription": "split a file into sections determined by context lines"
+  },
+  {
+    "name": "cut",
+    "shortDescription": "remove sections from each line of files"
+  },
+  {
+    "name": "dd",
+    "shortDescription": "convert and copy a file"
+  },
+  {
+    "name": "df",
+    "shortDescription": "report file system disk space usage"
+  },
+  {
+    "name": "dircolors",
+    "shortDescription": "color setup for ls"
+  },
+  {
+    "name": "dirname",
+    "shortDescription": "strip last component from file name"
+  },
+  {
+    "name": "du",
+    "shortDescription": "estimate file space usage"
+  },
+  {
+    "name": "env",
+    "shortDescription": "run a program in a modified environment"
+  },
+  {
+    "name": "expr",
+    "shortDescription": "evaluate expressions"
+  },
+  {
+    "name": "factor",
+    "shortDescription": "factor numbers"
+  },
+  {
+    "name": "file",
+    "shortDescription": "determine file type"
+  },
+  {
+    "name": "flock",
+    "shortDescription": "manage locks from shell scripts"
+  },
+  {
+    "name": "free",
+    "shortDescription": "Display amount of free and used memory in the system"
+  },
+  {
+    "name": "hostid",
+    "shortDescription": "print the numeric identifier for the current host"
+  },
+  {
+    "name": "install",
+    "shortDescription": "copy files and set attributes"
+  },
+  {
+    "name": "id",
+    "shortDescription": "print real and effective user and group IDs"
+  },
+  {
+    "name": "join",
+    "shortDescription": "join lines of two files on a common field"
+  },
+  {
+    "name": "link",
+    "shortDescription": "call the link function to create a link to a file"
+  },
+  {
+    "name": "ln",
+    "shortDescription": "make links between files"
+  },
+  {
+    "name": "logger",
+    "shortDescription": "enter messages into the system log"
+  },
+  {
+    "name": "logname",
+    "shortDescription": "print user\u0027s login name"
+  },
+  {
+    "name": "md5sum",
+    "shortDescription": "compute and check MD5 message digest"
+  },
+  {
+    "name": "mkfifo",
+    "shortDescription": "make FIFOs (named pipes)"
+  },
+  {
+    "name": "mknod",
+    "shortDescription": "make block or character special files"
+  },
+  {
+    "name": "mktemp",
+    "shortDescription": "create a temporary file or directory"
+  },
+  {
+    "name": "nice",
+    "shortDescription": "run a program with modified scheduling priority"
+  },
+  {
+    "name": "nl",
+    "shortDescription": "number lines of files"
+  },
+  {
+    "name": "nohup",
+    "shortDescription": "run a command immune to hangups, with output to a non-tty"
+  },
+  {
+    "name": "nproc",
+    "shortDescription": "print the number of processing units available"
+  },
+  {
+    "name": "numfmt",
+    "shortDescription": "Convert numbers from/to human-readable strings"
+  },
+  {
+    "name": "od",
+    "shortDescription": "dump files in octal and other formats"
+  },
+  {
+    "name": "paste",
+    "shortDescription": "merge lines of files"
+  },
+  {
+    "name": "pathchk",
+    "shortDescription": "check whether file names are valid or portable"
+  },
+  {
+    "name": "pinky",
+    "shortDescription": "lightweight finger"
+  },
+  {
+    "name": "printenv",
+    "shortDescription": "print all or part of environment"
+  },
+  {
+    "name": "ptx",
+    "shortDescription": "produce a permuted index of file contents"
+  },
+  {
+    "name": "pwd",
+    "shortDescription": "print name of current/working directory"
+  },
+  {
+    "name": "readlink",
+    "shortDescription": "print resolved symbolic links or canonical file names"
+  },
+  {
+    "name": "realpath",
+    "shortDescription": "print the resolved path"
+  },
+  {
+    "name": "runcon",
+    "shortDescription": "run command with specified security context"
+  },
+  {
+    "name": "seq",
+    "shortDescription": "print a sequence of numbers"
+  },
+  {
+    "name": "shuf",
+    "shortDescription": "generate random permutations"
+  },
+  {
+    "name": "sleep",
+    "shortDescription": "delay for a specified amount of time"
+  },
+  {
+    "name": "sort",
+    "shortDescription": "sort lines of text files"
+  },
+  {
+    "name": "stat",
+    "shortDescription": "display file or file system status"
+  },
+  {
+    "name": "stdbuf",
+    "shortDescription": "Run COMMAND, with modified buffering operations for its standard streams."
+  },
+  {
+    "name": "stty",
+    "shortDescription": "change and print terminal line settings"
+  },
+  {
+    "name": "sum",
+    "shortDescription": "checksum and count the blocks in a file"
+  },
+  {
+    "name": "sync",
+    "shortDescription": "Synchronize cached writes to persistent storage"
+  },
+  {
+    "name": "tac",
+    "shortDescription": "concatenate and print files in reverse"
+  },
+  {
+    "name": "tail",
+    "shortDescription": "output the last part of files"
+  },
+  {
+    "name": "timeout",
+    "shortDescription": "run a command with a time limit"
+  },
+  {
+    "name": "tr",
+    "shortDescription": "translate or delete characters"
+  },
+  {
+    "name": "truncate",
+    "shortDescription": "shrink or extend the size of a file to the specified size"
+  },
+  {
+    "name": "tsort",
+    "shortDescription": "perform topological sort"
+  },
+  {
+    "name": "tty",
+    "shortDescription": "print the file name of the terminal connected to standard input"
+  },
+  {
+    "name": "uname",
+    "shortDescription": "print system information"
+  },
+  {
+    "name": "unlink",
+    "shortDescription": "call the unlink function to remove the specified file"
+  },
+  {
+    "name": "uptime",
+    "shortDescription": "Tell how long the system has been running."
+  },
+  {
+    "name": "users",
+    "shortDescription": "print the user names of users currently logged in to the current host"
+  },
+  {
+    "name": "pstree",
+    "shortDescription": "display a tree of processes"
   }
 ]

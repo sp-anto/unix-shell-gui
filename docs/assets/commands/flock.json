@@ -1,0 +1,99 @@
+{
+  "name": "flock",
+  "shortDescription": "manage locks from shell scripts",
+  "longDescription": "This utility manages flock(2) locks from within shell scripts or from the command line.",
+  "syntaxes": [
+    "flock [options] file|directory command [arguments]",
+    "flock [options] file|directory -c command",
+    "flock [options] number"
+  ],
+  "options": [
+    {
+      "name": "e",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "?",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "shared",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "exclusive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "x",
+      "isLong": true
+    },
+    {
+      "name": "unlock",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "isLong": true
+    },
+    {
+      "name": "nonblocking",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "isLong": true
+    },
+    {
+      "name": "nb",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "isLong": true
+    },
+    {
+      "name": "timeout",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "w",
+      "isLong": true
+    },
+    {
+      "name": "wait",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "w",
+      "isLong": true
+    },
+    {
+      "name": "conflict-exit-code",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "E",
+      "isLong": true
+    },
+    {
+      "name": "close",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "o",
+      "isLong": true
+    },
+    {
+      "name": "no-fork",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "F",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "isLong": true
+    }
+  ]
+}

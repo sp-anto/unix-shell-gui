@@ -1,0 +1,41 @@
+{
+  "name": "stdbuf",
+  "shortDescription": "Run COMMAND, with modified buffering operations for its standard streams.",
+  "longDescription": "Run COMMAND, with modified buffering operations for its standard streams.",
+  "syntaxes": [
+    "stdbuf OPTION... COMMAND"
+  ],
+  "options": [
+    {
+      "name": "input",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "i",
+      "description": "Adjust the standard input stream buffering.",
+      "isLong": true
+    },
+    {
+      "name": "output",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "o",
+      "description": "Adjust the standard output stream buffering.",
+      "isLong": true
+    },
+    {
+      "name": "error",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "e",
+      "description": "Adjust the standard error stream buffering.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "join",
+  "shortDescription": "join lines of two files on a common field",
+  "longDescription": "For  each  pair  of input lines with identical join fields, write a line to standard output.  The default join field is the first, delimited by blanks.",
+  "syntaxes": [
+    "join [OPTION]... FILE1 FILE2"
+  ],
+  "options": [
+    {
+      "name": "a",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Print a line for each unpairable line in file FILE-NUMBER (either ‘1’ or ‘2’), in addition to the normal output.",
+      "isLong": false
+    },
+    {
+      "name": "e",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Replace those output fields that are missing in the input with STRING.  I.e., missing fields specified with the ‘-12jo’ options.",
+      "isLong": false
+    },
+    {
+      "name": "1",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Join on field FIELD (a positive integer) of file 1.",
+      "isLong": false
+    },
+    {
+      "name": "2",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Join on field FIELD (a positive integer) of file 2.",
+      "isLong": false
+    },
+    {
+      "name": "j",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Equivalent to ‘-1 FIELD -2 FIELD’.",
+      "isLong": false
+    },
+    {
+      "name": "o",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "If the keyword ‘auto’ is specified, infer the output format from the first line in each file.  This is the same as the default output format but also ensures the same number of fields are output for each line.  Missing fields are replaced with the ‘-e’ option and extra fields are discarded.",
+      "isLong": false
+    },
+    {
+      "name": "t",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use character CHAR as the input and output field separator.  Treat as significant each occurrence of CHAR in the input file.  Use ‘sort -t CHAR’, without the ‘-b’ option of ‘sort’, to produce this ordering.  If ‘join -t \u0027\u0027’ is specified, the whole line is considered, matching the default operation of sort.  If ‘-t \u0027\\0\u0027’ is specified then the ASCII NUL character is used to delimit the fields.",
+      "isLong": false
+    },
+    {
+      "name": "v",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Print a line for each unpairable line in file FILE-NUMBER (either ‘1’ or ‘2’), instead of the normal output.",
+      "isLong": false
+    },
+    {
+      "name": "ignore-case",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "Ignore differences in case when comparing keys.  With this option, the lines of the input files must be ordered in the same way.  Use ‘sort -f’ to produce this ordering.",
+      "isLong": true
+    },
+    {
+      "name": "check-order",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Fail with an error message if either input file is wrongly ordered.",
+      "isLong": true
+    },
+    {
+      "name": "nocheck-order",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not check that both input files are in sorted order.  This is the default.",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).  Note with ‘-z’ the newline character is treated as a field separator.",
+      "isLong": true
+    },
+    {
+      "name": "header",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Treat the first line of each input file as a header line.  The header lines will be joined and printed as the first output line. If ‘-o’ is used to specify output format, the header line will be printed according to the specified format.  The header lines will not be checked for ordering even if ‘--check-order’ is specified. Also if the header lines from each file do not match, the heading fields from the first file will be used.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

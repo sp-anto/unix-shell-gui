@@ -1,0 +1,41 @@
+{
+  "name": "base32",
+  "shortDescription": "base32 encode/decode data and print to standard output",
+  "longDescription": "Base32 encode or decode FILE, or standard input, to standard output.",
+  "syntaxes": [
+    "base32 [OPTION]... [FILE]"
+  ],
+  "options": [
+    {
+      "name": "decode",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Change the mode of operation, from the default of encoding data, to decoding data.  Input is expected to be base64 encoded data, and the output will be the original data.",
+      "isLong": true
+    },
+    {
+      "name": "wrap",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "w",
+      "description": "During encoding, wrap lines after COLS characters.  This must be a positive number.",
+      "isLong": true
+    },
+    {
+      "name": "ignore-garbage",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "When decoding, newlines are always accepted.  During decoding, ignore unrecognized bytes, to permit distorted data to be decoded.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

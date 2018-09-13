@@ -1,0 +1,121 @@
+{
+  "name": "free",
+  "shortDescription": "Display amount of free and used memory in the system",
+  "longDescription": "free displays the total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. The information is gathered by parsing  /proc/meminfo.  The  displayed  columns are:",
+  "syntaxes": [
+    "free [options]"
+  ],
+  "options": [
+    {
+      "name": "bytes",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "isLong": true
+    },
+    {
+      "name": "kilo",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "mega",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "giga",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "tera",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "peta",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "kibi",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "k",
+      "isLong": true
+    },
+    {
+      "name": "mebi",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "isLong": true
+    },
+    {
+      "name": "gibi",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "g",
+      "isLong": true
+    },
+    {
+      "name": "tebi",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "pebi",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "human",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "isLong": true
+    },
+    {
+      "name": "si",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "lohi",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "isLong": true
+    },
+    {
+      "name": "total",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "isLong": true
+    },
+    {
+      "name": "seconds",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "count",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "c",
+      "isLong": true
+    },
+    {
+      "name": "wide",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "w",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "isLong": true
+    }
+  ]
+}

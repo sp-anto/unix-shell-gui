@@ -1,0 +1,34 @@
+{
+  "name": "mkfifo",
+  "shortDescription": "make FIFOs (named pipes)",
+  "longDescription": "Create named pipes (FIFOs) with the given NAMEs.",
+  "syntaxes": [
+    "mkfifo [OPTION]... NAME..."
+  ],
+  "options": [
+    {
+      "name": "context",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "Z",
+      "description": "Without a specified CONTEXT, adjust the SELinux security context according to the system default type for destination files, similarly to the ‘restorecon’ command.  The long form of this option with a specific context specified, will set the context for newly created files only.  With a specified context, if both SELinux and SMACK are disabled, a warning is issued.",
+      "isLong": true
+    },
+    {
+      "name": "mode",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "m",
+      "description": "Set the mode of created FIFOs to MODE, which is symbolic as in ‘chmod’ and uses ‘a\u003drw’ (read and write allowed for everyone) for the point of departure.  MODE should specify only file permission bits.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

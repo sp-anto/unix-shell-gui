@@ -1,0 +1,20 @@
+{
+  "name": "logname",
+  "shortDescription": "print user\u0027s login name",
+  "longDescription": "Print the name of the current user.",
+  "syntaxes": [
+    "logname [OPTION]"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

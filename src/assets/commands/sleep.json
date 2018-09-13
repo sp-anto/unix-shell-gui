@@ -1,0 +1,21 @@
+{
+  "name": "sleep",
+  "shortDescription": "delay for a specified amount of time",
+  "longDescription": "Pause  for NUMBER seconds.  SUFFIX may be \u0027s\u0027 for seconds (the default), \u0027m\u0027 for minutes, \u0027h\u0027 for hours or \u0027d\u0027 for days.  Unlike most implementations that require NUMBER be an integer, here  NUMBER  may  be  an  arbitrary floating  point  number.   Given  two  or more arguments, pause for the amount of time specified by the sum of their values.",
+  "syntaxes": [
+    "sleep NUMBER[SUFFIX]...",
+    "sleep OPTION"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

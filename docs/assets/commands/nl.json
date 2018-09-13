@@ -1,0 +1,97 @@
+{
+  "name": "nl",
+  "shortDescription": "number lines of files",
+  "longDescription": "Write each FILE to standard output, with line numbers added.",
+  "syntaxes": [
+    "nl [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "header-numbering",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "h",
+      "description": "Analogous to ‘--body-numbering’.",
+      "isLong": true
+    },
+    {
+      "name": "body-numbering",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "b",
+      "description": "Select the numbering style for lines in the body section of each logical page.  When a line is not numbered, the current line number is not incremented, but the line number separator character is still prepended to the line.  The styles are:",
+      "isLong": true
+    },
+    {
+      "name": "footer-numbering",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Analogous to ‘--body-numbering’.",
+      "isLong": true
+    },
+    {
+      "name": "starting-line-number",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "v",
+      "description": "Set the initial line number on each logical page to NUMBER (default 1).",
+      "isLong": true
+    },
+    {
+      "name": "line-increment",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "i",
+      "description": "Increment line numbers by NUMBER (default 1).",
+      "isLong": true
+    },
+    {
+      "name": "no-renumber",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "description": "Do not reset the line number at the start of a logical page.",
+      "isLong": true
+    },
+    {
+      "name": "join-blank-lines",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "l",
+      "description": "Consider NUMBER (default 1) consecutive empty lines to be one logical line for numbering, and only number the last one.  Where fewer than NUMBER consecutive empty lines occur, do not number them.  An empty line is one that contains no characters, not even spaces or tabs.",
+      "isLong": true
+    },
+    {
+      "name": "number-separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Separate the line number from the text line in the output with STRING (default is the TAB character).",
+      "isLong": true
+    },
+    {
+      "name": "number-width",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "w",
+      "description": "Use NUMBER characters for line numbers (default 6).",
+      "isLong": true
+    },
+    {
+      "name": "number-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "n",
+      "description": "Select the line numbering format (default is ‘rn’):",
+      "isLong": true
+    },
+    {
+      "name": "section-delimiter",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "Set the section delimiter characters to CD; default is ‘\\:’.  If only C is given, the second remains ‘:’.  (Remember to protect ‘\\’ or other metacharacters from shell expansion with quotes or extra backslashes.)",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

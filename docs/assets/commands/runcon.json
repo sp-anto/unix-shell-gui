@@ -1,0 +1,56 @@
+{
+  "name": "runcon",
+  "shortDescription": "run command with specified security context",
+  "longDescription": "Run  COMMAND  with  completely-specified CONTEXT, or with current or transitioned security context modified by one or more of LEVEL, ROLE, TYPE, and USER.",
+  "syntaxes": [
+    "runcon CONTEXT COMMAND [args]",
+    "runcon [ -c ] [-u USER] [-r ROLE] [-t TYPE] [-l RANGE] COMMAND [args]"
+  ],
+  "options": [
+    {
+      "name": "role",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "r",
+      "description": "Set role ROLE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "type",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Set type TYPE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "user",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "u",
+      "description": "Set user USER in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "range",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "l",
+      "description": "Set range RANGE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "compute",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Compute process transition context before modifying.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

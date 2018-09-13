@@ -1,0 +1,55 @@
+{
+  "name": "dircolors",
+  "shortDescription": "color setup for ls",
+  "longDescription": "Output commands to set the LS_COLORS environment variable.",
+  "syntaxes": [
+    "dircolors [OPTION]... [FILE]"
+  ],
+  "options": [
+    {
+      "name": "bourne-shell",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Output Bourne shell commands.  This is the default if the ‘SHELL’ environment variable is set and does not end with ‘csh’ or ‘tcsh’.",
+      "isLong": true
+    },
+    {
+      "name": "sh",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Output Bourne shell commands.  This is the default if the ‘SHELL’ environment variable is set and does not end with ‘csh’ or ‘tcsh’.",
+      "isLong": true
+    },
+    {
+      "name": "csh",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Output C shell commands.  This is the default if ‘SHELL’ ends with ‘csh’ or ‘tcsh’.",
+      "isLong": true
+    },
+    {
+      "name": "c-shell",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Output C shell commands.  This is the default if ‘SHELL’ ends with ‘csh’ or ‘tcsh’.",
+      "isLong": true
+    },
+    {
+      "name": "print-database",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "description": "Print the (compiled-in) default color configuration database.  This output is itself a valid configuration file, and is fairly descriptive of the possibilities.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

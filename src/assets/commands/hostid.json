@@ -1,0 +1,20 @@
+{
+  "name": "hostid",
+  "shortDescription": "print the numeric identifier for the current host",
+  "longDescription": "Print the numeric identifier (in hexadecimal) for the current host.",
+  "syntaxes": [
+    "hostid [OPTION]"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

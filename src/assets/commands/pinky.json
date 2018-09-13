@@ -1,0 +1,65 @@
+{
+  "name": "pinky",
+  "shortDescription": "lightweight finger",
+  "longDescription": "-l     produce long format output for the specified USERs",
+  "syntaxes": [
+    "pinky [OPTION]... [USER]..."
+  ],
+  "options": [
+    {
+      "name": "s",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "f",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "w",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "q",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "b",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "h",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "l",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "p",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

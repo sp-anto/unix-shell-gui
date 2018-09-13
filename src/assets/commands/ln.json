@@ -1,0 +1,120 @@
+{
+  "name": "ln",
+  "shortDescription": "make links between files",
+  "longDescription": "In the 1st form, create a link to TARGET with the name LINK_NAME.  In the 2nd form, create a link to TARGET in the current directory.  In the 3rd and 4th forms, create links to each TARGET in DIRECTORY.  Create hard links by  default,  symbolic  links  with  --symbolic.   By  default, each destination (name of new link) should not already exist.  When creating hard links, each TARGET must exist.  Symbolic links can hold arbitrary text;  if later resolved, a relative link is interpreted in relation to its parent directory.",
+  "syntaxes": [
+    "ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)",
+    "ln [OPTION]... TARGET                  (2nd form)",
+    "ln [OPTION]... TARGET... DIRECTORY     (3rd form)",
+    "ln [OPTION]... -t DIRECTORY TARGET...  (4th form)"
+  ],
+  "options": [
+    {
+      "name": "d",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Allow users with appropriate privileges to attempt to make hard links to directories.  However, note that this will probably fail due to system restrictions, even for the super-user.",
+      "isLong": false
+    },
+    {
+      "name": "backup",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "b",
+      "description": "Make a backup of each file that would otherwise be overwritten or removed.",
+      "isLong": true
+    },
+    {
+      "name": "directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "F",
+      "description": "Allow users with appropriate privileges to attempt to make hard links to directories.  However, note that this will probably fail due to system restrictions, even for the super-user.",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Do not treat the last operand specially when it is a symbolic link to a directory.  Instead, treat it as if it were a normal file.",
+      "isLong": true
+    },
+    {
+      "name": "no-target-directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "(‘-T’) option is not given, ‘ln’ creates a link to each TARGET file in the specified directory, using the TARGETs’ names.",
+      "isLong": true
+    },
+    {
+      "name": "force",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "(‘-f’) option to replace them unconditionally, the ‘--interactive’ (‘-i’) option to replace them conditionally, and the ‘--backup’ (‘-b’) option to rename them.  Unless the ‘--backup’ (‘-b’) option is used there is no brief moment when the destination does not exist; this is an extension to POSIX.",
+      "isLong": true
+    },
+    {
+      "name": "interactive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "(‘-i’) option to replace them conditionally, and the ‘--backup’ (‘-b’) option to rename them.  Unless the ‘--backup’ (‘-b’) option is used there is no brief moment when the destination does not exist; this is an extension to POSIX.",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "Append SUFFIX to each backup file made with ‘-b’.",
+      "isLong": true
+    },
+    {
+      "name": "target-directory",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Specify the destination DIRECTORY.",
+      "isLong": true
+    },
+    {
+      "name": "logical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "If ‘-s’ is not in effect, and the source file is a symbolic link, create the hard link to the file referred to by the symbolic link, rather than the symbolic link itself.",
+      "isLong": true
+    },
+    {
+      "name": "physical",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "description": "If ‘-s’ is not in effect, and the source file is a symbolic link, create the hard link to the symbolic link itself.  On platforms where this is not supported by the kernel, this option creates a symbolic link with identical contents; since symbolic link contents cannot be edited, any file name resolution performed through either link will be the same as if a hard link had been created.",
+      "isLong": true
+    },
+    {
+      "name": "relative",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Make symbolic links relative to the link location.",
+      "isLong": true
+    },
+    {
+      "name": "symbolic",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Make symbolic links instead of hard links.  This option merely produces an error message on systems that do not support symbolic links.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the name of each file after linking it successfully.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

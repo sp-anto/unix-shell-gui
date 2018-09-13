@@ -1,0 +1,76 @@
+{
+  "name": "readlink",
+  "shortDescription": "print resolved symbolic links or canonical file names",
+  "longDescription": "Note realpath(1) is the preferred command to use for canonicalization functionality.",
+  "syntaxes": [
+    "readlink [OPTION]... FILE..."
+  ],
+  "options": [
+    {
+      "name": "canonicalize",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Activate canonicalize mode.  If any component of the file name except the last one is missing or unavailable, ‘readlink’ produces no output and exits with a nonzero exit code.  A trailing slash is ignored.",
+      "isLong": true
+    },
+    {
+      "name": "canonicalize-existing",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "e",
+      "description": "Activate canonicalize mode.  If any component is missing or unavailable, ‘readlink’ produces no output and exits with a nonzero exit code.  A trailing slash requires that the name resolve to a directory.",
+      "isLong": true
+    },
+    {
+      "name": "canonicalize-missing",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "description": "Activate canonicalize mode.  If any component is missing or unavailable, ‘readlink’ treats it as a directory.",
+      "isLong": true
+    },
+    {
+      "name": "no-newline",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Do not print the output delimiter, when a single FILE is specified. Print a warning if specified along with multiple FILEs.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Suppress most error messages.  On by default.",
+      "isLong": true
+    },
+    {
+      "name": "silent",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Suppress most error messages.  On by default.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Report error messages.",
+      "isLong": true
+    },
+    {
+      "name": "zero",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Output a zero byte (ASCII NUL) at the end of each line, rather than a newline.  This option enables other programs to parse the output even when that output would contain data with embedded newlines.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

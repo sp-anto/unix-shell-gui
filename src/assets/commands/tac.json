@@ -1,0 +1,41 @@
+{
+  "name": "tac",
+  "shortDescription": "concatenate and print files in reverse",
+  "longDescription": "Write each FILE to standard output, last line first.",
+  "syntaxes": [
+    "tac [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "before",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "The separator is attached to the beginning of the record that it precedes in the file.",
+      "isLong": true
+    },
+    {
+      "name": "regex",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Treat the separator string as a regular expression.",
+      "isLong": true
+    },
+    {
+      "name": "separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Use SEPARATOR as the record separator, instead of newline.  Note an empty SEPARATOR is treated as a zero byte.  I.e., input and output items are delimited with ASCII NUL.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

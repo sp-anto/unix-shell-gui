@@ -1,0 +1,138 @@
+{
+  "name": "install",
+  "shortDescription": "copy files and set attributes",
+  "longDescription": "This install program copies files (often just compiled) into destination locations you choose.  If you want to download and install a ready-to-use package on a GNU/Linux system, you should instead be using a package  man‐ ager like yum(1) or apt-get(1).",
+  "syntaxes": [
+    "install [OPTION]... [-T] SOURCE DEST",
+    "install [OPTION]... SOURCE... DIRECTORY",
+    "install [OPTION]... -t DIRECTORY SOURCE...",
+    "install [OPTION]... -d DIRECTORY..."
+  ],
+  "options": [
+    {
+      "name": "c",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Ignored; for compatibility with old Unix versions of ‘install’.",
+      "isLong": false
+    },
+    {
+      "name": "D",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Create any missing parent directories of DEST, then copy SOURCE to DEST.  Explicitly specifying the ‘--target-directory\u003dDIR’ will similarly ensure the presence of that hierarchy before copying SOURCE arguments.",
+      "isLong": false
+    },
+    {
+      "name": "backup",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "b",
+      "description": "Make a backup of each file that would otherwise be overwritten or removed.",
+      "isLong": true
+    },
+    {
+      "name": "compare",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "C",
+      "description": "Compare each pair of source and destination files, and if the destination has identical content and any specified owner, group, permissions, and possibly SELinux context, then do not modify the destination at all.  Note this option is best used in conjunction with ‘--user’, ‘--group’ and ‘--mode’ options, lest ‘install’ incorrectly determines the default attributes that installed files would have (as it doesn’t consider setgid directories and POSIX default ACLs for example).  This could result in redundant copies or attributes that are not reset to the correct defaults.",
+      "isLong": true
+    },
+    {
+      "name": "context",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "Z",
+      "description": "Without a specified CONTEXT, adjust the SELinux security context according to the system default type for destination files, similarly to the ‘restorecon’ command.  The long form of this option with a specific context specified, will set the context for newly created files only.  With a specified context, if both SELinux and SMACK are disabled, a warning is issued.  This option is mutually exclusive with the ‘--preserve-context’ option.",
+      "isLong": true
+    },
+    {
+      "name": "directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Create any missing parent directories, giving them the default attributes.  Then create each given directory, setting their owner, group and mode as given on the command line or to the defaults.",
+      "isLong": true
+    },
+    {
+      "name": "group",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "g",
+      "description": "incorrectly determines the default attributes that installed files would have (as it doesn’t consider setgid directories and POSIX default ACLs for example).  This could result in redundant copies or attributes that are not reset to the correct defaults.",
+      "isLong": true
+    },
+    {
+      "name": "mode",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "m",
+      "description": "incorrectly determines the default attributes that installed files would have (as it doesn’t consider setgid directories and POSIX default ACLs for example).  This could result in redundant copies or attributes that are not reset to the correct defaults.",
+      "isLong": true
+    },
+    {
+      "name": "no-target-directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "(‘-T’) option is not given, ‘install’ copies each SOURCE file to the specified directory, using the SOURCEs’ names.",
+      "isLong": true
+    },
+    {
+      "name": "owner",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "o",
+      "description": "If ‘install’ has appropriate privileges (is run as root), set the ownership of installed files or directories to OWNER.  The default is ‘root’.  OWNER may be either a user name or a numeric user ID.",
+      "isLong": true
+    },
+    {
+      "name": "preserve-timestamps",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "description": "Set the time of last access and the time of last modification of each installed file to match those of each corresponding original file.  When a file is installed without this option, its last access and last modification timestamps are both set to the time of installation.  This option is useful if you want to use the last modification timestamps of installed files to keep track of when they were last built as opposed to when they were last installed.",
+      "isLong": true
+    },
+    {
+      "name": "preserve-context",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Preserve the SELinux security context of files and directories. Failure to preserve the context in all of the files or directories will result in an exit status of 1.  If SELinux is disabled then print a warning and ignore the option.",
+      "isLong": true
+    },
+    {
+      "name": "strip",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Strip the symbol tables from installed binary executables.",
+      "isLong": true
+    },
+    {
+      "name": "strip-program",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Program used to strip binaries.",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "Append SUFFIX to each backup file made with ‘-b’.",
+      "isLong": true
+    },
+    {
+      "name": "target-directory",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Specify the destination DIRECTORY.    Also specifying the ‘-D’ option will ensure the directory is present.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the name of each file before copying it.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

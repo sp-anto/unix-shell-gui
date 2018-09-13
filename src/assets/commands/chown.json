@@ -1,0 +1,111 @@
+{
+  "name": "chown",
+  "shortDescription": "change file owner and group",
+  "longDescription": "This  manual  page  documents the GNU version of chown.  chown changes the user and/or group ownership of each given file.  If only an owner (a user name or numeric user ID) is given, that user is made the owner  of  each given  file,  and  the  files\u0027 group is not changed.  If the owner is followed by a colon and a group name (or numeric group ID), with no spaces between them, the group ownership of the files is changed  as  well.   If  a colon  but  no group name follows the user name, that user is made the owner of the files and the group of the files is changed to that user\u0027s login group.  If the colon and group are given, but the owner is omitted, only the  group  of the files is changed; in this case, chown performs the same function as chgrp.  If only a colon is given, or if the entire operand is empty, neither the owner nor the group is changed.",
+  "syntaxes": [
+    "chown [OPTION]... [OWNER][:[GROUP]] FILE...",
+    "chown [OPTION]... --reference\u003dRFILE FILE..."
+  ],
+  "options": [
+    {
+      "name": "H",
+      "argumentType": "NO_ARGUMENT",
+      "description": "If ‘--recursive’ (‘-R’) is specified and a command line argument is a symbolic link to a directory, traverse it.",
+      "isLong": false
+    },
+    {
+      "name": "L",
+      "argumentType": "NO_ARGUMENT",
+      "description": "In a recursive traversal, traverse every symbolic link to a directory that is encountered.",
+      "isLong": false
+    },
+    {
+      "name": "P",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not traverse any symbolic links.  This is the default if none of ‘-H’, ‘-L’, or ‘-P’ is specified.",
+      "isLong": false
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "Recursively change ownership of directories and their contents.",
+      "isLong": true
+    },
+    {
+      "name": "changes",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Verbosely describe the action for each FILE whose ownership actually changes.",
+      "isLong": true
+    },
+    {
+      "name": "dereference",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not act on symbolic links themselves but rather on what they point to.  This is the default.",
+      "isLong": true
+    },
+    {
+      "name": "from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Change a FILE’s ownership only if it has current attributes specified by OLD-OWNER.  OLD-OWNER has the same form as NEW-OWNER described above.  This option is useful primarily from a security standpoint in that it narrows considerably the window of potential abuse.  For example, to reflect a user ID numbering change for one user’s files without an option like this, ‘root’ might run",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "description": "Act on symbolic links themselves instead of what they point to. This mode relies on the ‘lchown’ system call.  On systems that do not provide the ‘lchown’ system call, ‘chown’ fails when a file specified on the command line is a symbolic link.  By default, no diagnostic is issued for symbolic links encountered during a recursive traversal, but see ‘--verbose’.",
+      "isLong": true
+    },
+    {
+      "name": "no-preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Cancel the effect of any preceding ‘--preserve-root’ option.",
+      "isLong": true
+    },
+    {
+      "name": "preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Fail upon any attempt to recursively change the root directory, ‘/’.  Without ‘--recursive’, this option has no effect.",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Do not print error messages about files whose ownership cannot be changed.",
+      "isLong": true
+    },
+    {
+      "name": "silent",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Do not print error messages about files whose ownership cannot be changed.",
+      "isLong": true
+    },
+    {
+      "name": "reference",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Change the user and group of each FILE to be the same as those of REF_FILE.  If REF_FILE is a symbolic link, do not use the user and group of the symbolic link, but rather those of the file it refers to.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Output a diagnostic for every file processed.  If a symbolic link is encountered during a recursive traversal on a system without the ‘lchown’ system call, and ‘--no-dereference’ is in effect, then issue a diagnostic saying neither the symbolic link nor its referent is being changed.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

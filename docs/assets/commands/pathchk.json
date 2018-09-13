@@ -1,0 +1,38 @@
+{
+  "name": "pathchk",
+  "shortDescription": "check whether file names are valid or portable",
+  "longDescription": "Diagnose invalid or unportable file names.",
+  "syntaxes": [
+    "pathchk [OPTION]... NAME..."
+  ],
+  "options": [
+    {
+      "name": "p",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Instead of performing checks based on the underlying file system, print an error message if any of these conditions is true:",
+      "isLong": false
+    },
+    {
+      "name": "P",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print an error message if a file name is empty, or if it contains a component that begins with ‘-’.",
+      "isLong": false
+    },
+    {
+      "name": "portability",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print an error message if a file name is not portable to all POSIX hosts.  This option is equivalent to ‘-p -P’.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

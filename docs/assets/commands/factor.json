@@ -1,0 +1,28 @@
+{
+  "name": "factor",
+  "shortDescription": "factor numbers",
+  "longDescription": "Print  the  prime  factors  of each specified integer NUMBER.  If none are specified on the command line, read them from standard input.",
+  "syntaxes": [
+    "factor [NUMBER]...",
+    "factor OPTION"
+  ],
+  "options": [
+    {
+      "name": "-debug",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print a short help on standard output, then exit without further processing.",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print the program version on standard output, then exit without further processing.",
+      "isLong": true
+    }
+  ]
+}

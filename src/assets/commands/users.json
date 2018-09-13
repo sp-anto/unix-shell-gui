@@ -1,0 +1,20 @@
+{
+  "name": "users",
+  "shortDescription": "print the user names of users currently logged in to the current host",
+  "longDescription": "Output  who  is  currently  logged  in  according  to  FILE.   If  FILE  is  not specified, use /var/run/utmp. /var/log/wtmp as FILE is common.",
+  "syntaxes": [
+    "users [OPTION]... [FILE]"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "cut",
+  "shortDescription": "remove sections from each line of files",
+  "longDescription": "Print selected parts of lines from each FILE to standard output.",
+  "syntaxes": [
+    "cut OPTION... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "n",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not split multi-byte characters (no-op for now).",
+      "isLong": false
+    },
+    {
+      "name": "bytes",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "b",
+      "description": "Select for printing only the bytes in positions listed in BYTE-LIST.  Tabs and backspaces are treated like any other character; they take up 1 byte.  If an output delimiter is specified, (see the description of ‘--output-delimiter’), then output that string between ranges of selected bytes.",
+      "isLong": true
+    },
+    {
+      "name": "characters",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "c",
+      "description": "Select for printing only the characters in positions listed in CHARACTER-LIST.  The same as ‘-b’ for now, but internationalization will change that.  Tabs and backspaces are treated like any other character; they take up 1 character.  If an output delimiter is specified, (see the description of ‘--output-delimiter’), then output that string between ranges of selected bytes.",
+      "isLong": true
+    },
+    {
+      "name": "fields",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Select for printing only the fields listed in FIELD-LIST.  Fields are separated by a TAB character by default.  Also print any line that contains no delimiter character, unless the ‘--only-delimited’ (‘-s’) option is specified.",
+      "isLong": true
+    },
+    {
+      "name": "delimiter",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "With ‘-f’, use the first byte of INPUT_DELIM_BYTE as the input fields separator (default is TAB).",
+      "isLong": true
+    },
+    {
+      "name": "only-delimited",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "(‘-s’) option is specified.",
+      "isLong": true
+    },
+    {
+      "name": "output-delimiter",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "With ‘-f’, output fields are separated by OUTPUT_DELIM_STRING.  The default with ‘-f’ is to use the input delimiter.  When using ‘-b’ or ‘-c’ to select ranges of byte or character offsets (as opposed to ranges of fields), output OUTPUT_DELIM_STRING between non-overlapping ranges of selected bytes.",
+      "isLong": true
+    },
+    {
+      "name": "complement",
+      "argumentType": "NO_ARGUMENT",
+      "description": "This option is a GNU extension.  Select for printing the complement of the bytes, characters or fields selected with the ‘-b’, ‘-c’ or ‘-f’ options.  In other words, do _not_ print the bytes, characters or fields specified via those options.  This option is useful when you have many fields and want to print all but a few of them.",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

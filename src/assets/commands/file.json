@@ -1,0 +1,181 @@
+{
+  "name": "file",
+  "shortDescription": "determine file type",
+  "longDescription": "This manual page documents version 5.32 of the file command.",
+  "syntaxes": [
+    "file [-bcdEhiklLNnprsvzZ0] [--apple] [--extension] [--mime-encoding] [--mime-type] [-e testname] [-F separator]",
+    "[-f namefile] [-m magicfiles] [-P name\u003dvalue] file ...",
+    "file -C [-m magicfiles]",
+    "file [--help]"
+  ],
+  "options": [
+    {
+      "name": "E",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "isLong": true
+    },
+    {
+      "name": "magic-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "m",
+      "isLong": true
+    },
+    {
+      "name": "uncompress",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "isLong": true
+    },
+    {
+      "name": "uncompress-noreport",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "Z",
+      "isLong": true
+    },
+    {
+      "name": "brief",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "isLong": true
+    },
+    {
+      "name": "checking-printout",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "isLong": true
+    },
+    {
+      "name": "exclude",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "e",
+      "isLong": true
+    },
+    {
+      "name": "files-from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "isLong": true
+    },
+    {
+      "name": "separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "F",
+      "isLong": true
+    },
+    {
+      "name": "mime",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "isLong": true
+    },
+    {
+      "name": "apple",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "extension",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "mime-type",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "mime-encoding",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "keep-going",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "k",
+      "isLong": true
+    },
+    {
+      "name": "list",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "isLong": true
+    },
+    {
+      "name": "dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "isLong": true
+    },
+    {
+      "name": "no-buffer",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "isLong": true
+    },
+    {
+      "name": "no-pad",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "N",
+      "isLong": true
+    },
+    {
+      "name": "print0",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "0",
+      "isLong": true
+    },
+    {
+      "name": "preserve-date",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "isLong": true
+    },
+    {
+      "name": "parameter",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "P",
+      "isLong": true
+    },
+    {
+      "name": "raw",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "isLong": true
+    },
+    {
+      "name": "special-files",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "compile",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "C",
+      "isLong": true
+    },
+    {
+      "name": "debug",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "isLong": true
+    }
+  ]
+}

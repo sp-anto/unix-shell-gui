@@ -1,0 +1,145 @@
+{
+  "name": "ptx",
+  "shortDescription": "produce a permuted index of file contents",
+  "longDescription": "Output a permuted index, including context, of the words in the input files.",
+  "syntaxes": [
+    "ptx [OPTION]... [INPUT]...   (without -G)",
+    "ptx -G [OPTION]... [INPUT [OUTPUT]]"
+  ],
+  "options": [
+    {
+      "name": "O",
+      "argumentType": "NO_ARGUMENT",
+      "description": "",
+      "isLong": false
+    },
+    {
+      "name": "T",
+      "argumentType": "NO_ARGUMENT",
+      "description": "",
+      "isLong": false
+    },
+    {
+      "name": "auto-reference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "A",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "break-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "b",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "flag-truncation",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "F",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "ignore-case",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Fold lower case letters to upper case for sorting.",
+      "isLong": true
+    },
+    {
+      "name": "gap-size",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "g",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "ignore-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "i",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "macro-name",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "M",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "only-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "o",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "references",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "right-side-refs",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "sentence-regexp",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "traditional",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "G",
+      "description": "As already explained, this option disables all GNU extensions to ‘ptx’ and switches to traditional mode.",
+      "isLong": true
+    },
+    {
+      "name": "typeset-mode",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "isLong": true
+    },
+    {
+      "name": "width",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "w",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "word-regexp",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "W",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print a short help on standard output, then exit without further processing.",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print the program version on standard output, then exit without further processing.",
+      "isLong": true
+    }
+  ]
+}

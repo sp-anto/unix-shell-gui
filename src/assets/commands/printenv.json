@@ -1,0 +1,37 @@
+{
+  "name": "printenv",
+  "shortDescription": "print all or part of environment",
+  "longDescription": "Print  the values of the specified environment VARIABLE(s).  If no VARIABLE is specified, print name and value pairs for them all.",
+  "syntaxes": [
+    "printenv [OPTION]... [VARIABLE]..."
+  ],
+  "options": [
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "u",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": false
+    },
+    {
+      "name": "null",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "0",
+      "description": "Output a zero byte (ASCII NUL) at the end of each line, rather than a newline.  This option enables other programs to parse the output even when that output would contain data with embedded newlines.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

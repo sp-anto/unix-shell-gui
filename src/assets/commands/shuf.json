@@ -1,0 +1,70 @@
+{
+  "name": "shuf",
+  "shortDescription": "generate random permutations",
+  "longDescription": "Write a random permutation of the input lines to standard output.",
+  "syntaxes": [
+    "shuf [OPTION]... [FILE]",
+    "shuf -e [OPTION]... [ARG]...",
+    "shuf -i LO-HI [OPTION]..."
+  ],
+  "options": [
+    {
+      "name": "echo",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "e",
+      "description": "Treat each command-line operand as an input line.",
+      "isLong": true
+    },
+    {
+      "name": "input-range",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "i",
+      "description": "Act as if input came from a file containing the range of unsigned decimal integers LO...HI, one per line.",
+      "isLong": true
+    },
+    {
+      "name": "head-count",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "n",
+      "description": "Output at most COUNT lines.  By default, all input lines are output.",
+      "isLong": true
+    },
+    {
+      "name": "output",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "o",
+      "description": "Write output to OUTPUT-FILE instead of standard output.  ‘shuf’ reads all input before opening OUTPUT-FILE, so you can safely shuffle a file in place by using commands like ‘shuf -o F \u003cF’ and ‘cat F | shuf -o F’.",
+      "isLong": true
+    },
+    {
+      "name": "random-source",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use FILE as a source of random data used to determine which permutation to generate.",
+      "isLong": true
+    },
+    {
+      "name": "repeat",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Repeat output values, that is, select with replacement.  With this option the output is not a permutation of the input; instead, each output line is randomly chosen from all the inputs.  This option is typically combined with ‘--head-count’; if ‘--head-count’ is not given, ‘shuf’ repeats indefinitely.",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

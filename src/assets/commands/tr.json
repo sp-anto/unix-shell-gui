@@ -1,0 +1,51 @@
+{
+  "name": "tr",
+  "shortDescription": "translate or delete characters",
+  "longDescription": "Translate, squeeze, and/or delete characters from standard input, writing to standard output.",
+  "syntaxes": [
+    "tr [OPTION]... SET1 [SET2]"
+  ],
+  "options": [
+    {
+      "name": "C",
+      "argumentType": "NO_ARGUMENT",
+      "description": "option will cause it to complement the set of characters, whereas ‘-c’ will cause it to complement the set of values.  This distinction will matter only when some values are not characters, and this is possible only in locales using multibyte encodings when the input contains encoding errors.",
+      "isLong": false
+    },
+    {
+      "name": "complement",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "(‘-c’, ‘-C’) option replaces SET1 with its complement (all of the characters that are not in SET1).",
+      "isLong": true
+    },
+    {
+      "name": "delete",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "isLong": true
+    },
+    {
+      "name": "squeeze-repeats",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "truncate-set1",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

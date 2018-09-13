@@ -1,0 +1,227 @@
+{
+  "name": "sort",
+  "shortDescription": "sort lines of text files",
+  "longDescription": "Write sorted concatenation of all FILE(s) to standard output.",
+  "syntaxes": [
+    "sort [OPTION]... [FILE]...",
+    "sort [OPTION]... --files0-from\u003dF"
+  ],
+  "options": [
+    {
+      "name": "c",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Check whether the given file is already sorted: if it is not all sorted, print a diagnostic containing the first out-of-order line and exit with a status of 1.  Otherwise, exit successfully.  At most one input file can be given.",
+      "isLong": false
+    },
+    {
+      "name": "C",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Exit successfully if the given file is already sorted, and exit with status 1 otherwise.  At most one input file can be given. This is like ‘-c’, except it does not print a diagnostic.",
+      "isLong": false
+    },
+    {
+      "name": "y",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": false
+    },
+    {
+      "name": "ignore-leading-blanks",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Ignore leading blanks when finding sort keys in each line.  By default a blank is a space or a tab, but the ‘LC_CTYPE’ locale can change this.  Note blanks may be ignored by your locale’s collating rules, but without this option they will be significant for character positions specified in keys with the ‘-k’ option.",
+      "isLong": true
+    },
+    {
+      "name": "check",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Check whether the given file is already sorted: if it is not all sorted, print a diagnostic containing the first out-of-order line and exit with a status of 1.  Otherwise, exit successfully.  At most one input file can be given.",
+      "isLong": true
+    },
+    {
+      "name": "compress-program",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Compress any temporary files with the program PROG.",
+      "isLong": true
+    },
+    {
+      "name": "debug",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Highlight the portion of each line used for sorting.  Also issue warnings about questionable usage to stderr.",
+      "isLong": true
+    },
+    {
+      "name": "dictionary-order",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Sort in “phone directory” order: ignore all characters except letters, digits and blanks when sorting.  By default letters and digits are those of ASCII and a blank is a space or a tab, but the ‘LC_CTYPE’ locale can change this.",
+      "isLong": true
+    },
+    {
+      "name": "ignore-case",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Fold lowercase characters into the equivalent uppercase characters when comparing so that, for example, ‘b’ and ‘B’ sort as equal. The ‘LC_CTYPE’ locale determines character types.  When used with ‘--unique’ those lower case equivalent lines are thrown away. (There is currently no way to throw away the upper case equivalent instead.  (Any ‘--reverse’ given would only affect the final result, after the throwing away.))",
+      "isLong": true
+    },
+    {
+      "name": "files0-from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Disallow processing files named on the command line, and instead process those named in file FILE; each name being terminated by a zero byte (ASCII NUL). This is useful when the list of file names is so long that it may exceed a command line length limitation.  In such cases, running ‘sort’ via ‘xargs’ is undesirable because it splits the list into pieces and makes ‘sort’ print sorted output for each sublist rather than for the entire list.  One way to produce a list of ASCII NUL terminated file names is with GNU ‘find’, using its ‘-print0’ predicate.  If FILE is ‘-’ then the ASCII NUL terminated file names are read from standard input.",
+      "isLong": true
+    },
+    {
+      "name": "general-numeric-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "g",
+      "description": "Sort numerically, converting a prefix of each line to a long double-precision floating point number.   Do not report overflow, underflow, or conversion errors.  Use the following collating sequence:",
+      "isLong": true
+    },
+    {
+      "name": "ignore-nonprinting",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "Ignore nonprinting characters.  The ‘LC_CTYPE’ locale determines character types.  This option has no effect if the stronger ‘--dictionary-order’ (‘-d’) option is also given.",
+      "isLong": true
+    },
+    {
+      "name": "key",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "k",
+      "description": "Specify a sort field that consists of the part of the line between POS1 and POS2 (or the end of the line, if POS2 is omitted), _inclusive_.",
+      "isLong": true
+    },
+    {
+      "name": "merge",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "m",
+      "description": "Merge the given files by sorting them as a group.  Each input file must always be individually sorted.  It always works to sort instead of merge; merging is provided because it is faster, in the case where it works.",
+      "isLong": true
+    },
+    {
+      "name": "month-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "M",
+      "description": "An initial string, consisting of any amount of blanks, followed by a month name abbreviation, is folded to UPPER case and compared in the order ‘JAN’ \u003c ‘FEB’ \u003c ... \u003c ‘DEC’.  Invalid names compare low to valid names.  The ‘LC_TIME’ locale category determines the month spellings.  By default a blank is a space or a tab, but the ‘LC_CTYPE’ locale can change this.",
+      "isLong": true
+    },
+    {
+      "name": "numeric-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Sort numerically.  The number begins each line and consists of optional blanks, an optional ‘-’ sign, and zero or more digits possibly separated by thousands separators, optionally followed by a decimal-point character and zero or more digits.  An empty number is treated as ‘0’.  The ‘LC_NUMERIC’ locale specifies the decimal-point character and thousands separator.  By default a blank is a space or a tab, but the ‘LC_CTYPE’ locale can change this.",
+      "isLong": true
+    },
+    {
+      "name": "human-numeric-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "description": "Sort numerically, first by numeric sign (negative, zero, or positive); then by SI suffix (either empty, or ‘k’ or ‘K’, or one of ‘MGTPEZY’, in that order; *note Block size::); and finally by numeric value.  For example, ‘1023M’ sorts before ‘1G’ because ‘M’ (mega) precedes ‘G’ (giga) as an SI suffix.  This option sorts values that are consistently scaled to the nearest suffix, regardless of whether suffixes denote powers of 1000 or 1024, and it therefore sorts the output of any single invocation of the ‘df’, ‘du’, or ‘ls’ commands that are invoked with their ‘--human-readable’ or ‘--si’ options.  The syntax for numbers is the same as for the ‘--numeric-sort’ option; the SI suffix must immediately follow the number.  Note also the ‘numfmt’ command, which can be used to reformat numbers to human format _after_ the sort, thus often allowing sort to operate on more accurate numbers.",
+      "isLong": true
+    },
+    {
+      "name": "version-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "description": "Sort by version name and number.  It behaves like a standard sort, except that each sequence of decimal digits is treated numerically as an index/version number.  ()",
+      "isLong": true
+    },
+    {
+      "name": "random-sort",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "Sort by hashing the input keys and then sorting the hash values. Choose the hash function at random, ensuring that it is free of collisions so that differing keys have differing hash values.  This is like a random permutation of the inputs (*note shuf invocation::), except that keys with the same value sort together.",
+      "isLong": true
+    },
+    {
+      "name": "random-source",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "option.",
+      "isLong": true
+    },
+    {
+      "name": "sort",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Sort numerically, converting a prefix of each line to a long double-precision floating point number.   Do not report overflow, underflow, or conversion errors.  Use the following collating sequence:",
+      "isLong": true
+    },
+    {
+      "name": "output",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "o",
+      "description": "Write output to OUTPUT-FILE instead of standard output.  Normally, ‘sort’ reads all input before opening OUTPUT-FILE, so you can sort a file in place by using commands like ‘sort -o F F’ and ‘cat F | sort -o F’.  However, it is often safer to output to an otherwise-unused file, as data may be lost if the system crashes or ‘sort’ encounters an I/O or other serious error while a file is being sorted in place.  Also, ‘sort’ with ‘--merge’ (‘-m’) can open the output file before reading all input, so a command like ‘cat F | sort -m -o F - G’ is not safe as ‘sort’ might start writing ‘F’ before ‘cat’ is done reading it.",
+      "isLong": true
+    },
+    {
+      "name": "reverse",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Reverse the result of comparison, so that lines with greater key values appear earlier in the output instead of later.",
+      "isLong": true
+    },
+    {
+      "name": "stable",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "",
+      "isLong": true
+    },
+    {
+      "name": "batch-size",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Merge at most NMERGE inputs at once.",
+      "isLong": true
+    },
+    {
+      "name": "buffer-size",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "Use a main-memory sort buffer of the given SIZE.  By default, SIZE is in units of 1024 bytes.  Appending ‘%’ causes SIZE to be interpreted as a percentage of physical memory.  Appending ‘K’ multiplies SIZE by 1024 (the default), ‘M’ by 1,048,576, ‘G’ by 1,073,741,824, and so on for ‘T’, ‘P’, ‘E’, ‘Z’, and ‘Y’. Appending ‘b’ causes SIZE to be interpreted as a byte count, with no multiplication.",
+      "isLong": true
+    },
+    {
+      "name": "field-separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Use character SEPARATOR as the field separator when finding the sort keys in each line.  By default, fields are separated by the empty string between a non-blank character and a blank character. By default a blank is a space or a tab, but the ‘LC_CTYPE’ locale can change this.",
+      "isLong": true
+    },
+    {
+      "name": "temporary-directory",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "T",
+      "description": "Use directory TEMPDIR to store temporary files, overriding the ‘TMPDIR’ environment variable.  If this option is given more than once, temporary files are stored in all the directories given.  If you have a large sort or merge that is I/O-bound, you can often improve performance by using this option to specify directories on different disks and controllers.",
+      "isLong": true
+    },
+    {
+      "name": "unique",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "(‘-u’) option also disables the last-resort comparison.",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).",
+      "isLong": true
+    },
+    {
+      "name": "parallel",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Set the number of sorts run in parallel to N.  By default, N is set to the number of available processors, but limited to 8, as there are diminishing performance gains after that.  Note also that using N threads increases the memory usage by a factor of log N.  Also see *note nproc invocation::.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Sort by version name and number.  It behaves like a standard sort, except that each sequence of decimal digits is treated numerically as an index/version number.  ()",
+      "isLong": true
+    }
+  ]
+}

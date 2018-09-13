@@ -1,0 +1,113 @@
+{
+  "name": "chcon",
+  "shortDescription": "change file security context",
+  "longDescription": "Change the SELinux security context of each FILE to CONTEXT.  With --reference, change the security context of each FILE to that of RFILE.",
+  "syntaxes": [
+    "chcon [OPTION]... CONTEXT FILE...",
+    "chcon [OPTION]... [-u USER] [-r ROLE] [-l RANGE] [-t TYPE] FILE...",
+    "chcon [OPTION]... --reference\u003dRFILE FILE..."
+  ],
+  "options": [
+    {
+      "name": "H",
+      "argumentType": "NO_ARGUMENT",
+      "description": "If ‘--recursive’ (‘-R’) is specified and a command line argument is a symbolic link to a directory, traverse it.",
+      "isLong": false
+    },
+    {
+      "name": "L",
+      "argumentType": "NO_ARGUMENT",
+      "description": "In a recursive traversal, traverse every symbolic link to a directory that is encountered.",
+      "isLong": false
+    },
+    {
+      "name": "P",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not traverse any symbolic links.  This is the default if none of ‘-H’, ‘-L’, or ‘-P’ is specified.",
+      "isLong": false
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "Operate on files and directories recursively.",
+      "isLong": true
+    },
+    {
+      "name": "dereference",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not affect symbolic links but what they refer to; this is the default.",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "description": "Affect the symbolic links themselves instead of any referenced file.",
+      "isLong": true
+    },
+    {
+      "name": "no-preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not treat the root directory, ‘/’, specially when operating recursively; this is the default.",
+      "isLong": true
+    },
+    {
+      "name": "preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Refuse to operate recursively on the root directory, ‘/’, when used together with the ‘--recursive’ option.",
+      "isLong": true
+    },
+    {
+      "name": "reference",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Use RFILE’s security context rather than specifying a CONTEXT value.",
+      "isLong": true
+    },
+    {
+      "name": "user",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "u",
+      "description": "Set user USER in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "role",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "r",
+      "description": "Set role ROLE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "type",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Set type TYPE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "range",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "l",
+      "description": "Set range RANGE in the target security context.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Output a diagnostic for every file processed.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

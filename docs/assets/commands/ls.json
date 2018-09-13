@@ -7,27 +7,9 @@
   ],
   "options": [
     {
-      "name": "a",
-      "argumentType": "NO_ARGUMENT",
-      "description": "In directories, do not ignore file names that start with ‘.’.",
-      "isLong": false
-    },
-    {
-      "name": "b",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Quote nongraphic characters in file names using alphabetic and octal backslash sequences like those used in C.",
-      "isLong": false
-    },
-    {
       "name": "c",
       "argumentType": "NO_ARGUMENT",
       "description": "If the long listing format (e.g., ‘-l’, ‘-o’) is being used, print the status change timestamp (the ctime) instead of the mtime.  When explicitly sorting by time (‘--sort\u003dtime’ or ‘-t’) or when not using a long listing format, sort according to the ctime.",
-      "isLong": false
-    },
-    {
-      "name": "d",
-      "argumentType": "NO_ARGUMENT",
-      "description": "List just the names of directories, as with other types of files, rather than listing their contents.  Do not follow symbolic links listed on the command line unless the ‘--dereference-command-line’ (‘-H’), ‘--dereference’ (‘-L’), or ‘--dereference-command-line-symlink-to-dir’ options are specified.",
       "isLong": false
     },
     {
@@ -43,24 +25,6 @@
       "isLong": false
     },
     {
-      "name": "h",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Append a size letter to each size, such as ‘M’ for mebibytes. Powers of 1024 are used, not 1000; ‘M’ stands for 1,048,576 bytes. This option is equivalent to ‘--block-size\u003dhuman-readable’.  Use the ‘--si’ option if you prefer powers of 1000.",
-      "isLong": false
-    },
-    {
-      "name": "i",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Print the inode number (also called the file serial number and index number) of each file to the left of the file name.  (This number uniquely identifies each file within a particular file system.)",
-      "isLong": false
-    },
-    {
-      "name": "k",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Set the default block size to its normal value of 1024 bytes, overriding any contrary specification in environment variables (*note Block size::).  This option is in turn overridden by the ‘--block-size’, ‘-h’ or ‘--human-readable’, and ‘--si’ options.",
-      "isLong": false
-    },
-    {
       "name": "l",
       "argumentType": "NO_ARGUMENT",
       "description": "In addition to the name of each file, print the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp (*note Formatting file timestamps::), normally the modification timestamp (the mtime, *note File timestamps::).  Print question marks for information that cannot be determined.",
@@ -73,12 +37,6 @@
       "isLong": false
     },
     {
-      "name": "n",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Produce long format directory listings, but display numeric user and group IDs instead of the owner and group names.",
-      "isLong": false
-    },
-    {
       "name": "o",
       "argumentType": "NO_ARGUMENT",
       "description": "Produce long format directory listings, but don’t display group information.  It is equivalent to using ‘--format\u003dlong’ with ‘--no-group’ .",
@@ -88,24 +46,6 @@
       "name": "p",
       "argumentType": "NO_ARGUMENT",
       "description": "option. ‘file-type’ Append ‘/’ for directories, ‘@’ for symbolic links, ‘|’ for FIFOs, ‘\u003d’ for sockets, and nothing for regular files.  This is the same as the ‘--file-type’ option. ‘classify’ Append ‘*’ for executable regular files, otherwise behave as for ‘file-type’.  This is the same as the ‘-F’ or ‘--classify’ option.",
-      "isLong": false
-    },
-    {
-      "name": "q",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Print question marks instead of nongraphic characters in file names.  This is the default if the output is a terminal and the program is ‘ls’.",
-      "isLong": false
-    },
-    {
-      "name": "r",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Reverse whatever the sorting method is—e.g., list files in reverse alphabetical order, youngest first, smallest first, or whatever.",
-      "isLong": false
-    },
-    {
-      "name": "s",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Print the disk allocation of each file to the left of the file name.  This is the amount of disk space used by the file, which is usually a bit more than the file’s size, but it can be less if the file has holes.",
       "isLong": false
     },
     {
@@ -127,27 +67,9 @@
       "isLong": false
     },
     {
-      "name": "w",
-      "argumentType": "ARGUMENT_REQUIRED",
-      "description": "Assume the screen is COLS columns wide.  The default is taken from the terminal settings if possible; otherwise the environment variable ‘COLUMNS’ is used if it is set; otherwise the default is 80.  With a COLS value of ‘0’, there is no limit on the length of the output line, and that single output line will be delimited with spaces, not tabs.",
-      "isLong": false
-    },
-    {
       "name": "x",
       "argumentType": "NO_ARGUMENT",
       "description": "List the files in columns, sorted horizontally.",
-      "isLong": false
-    },
-    {
-      "name": "A",
-      "argumentType": "NO_ARGUMENT",
-      "description": "In directories, do not ignore all file names that start with ‘.’; ignore only ‘.’ and ‘..’.  The ‘--all’ (‘-a’) option overrides this option.",
-      "isLong": false
-    },
-    {
-      "name": "B",
-      "argumentType": "NO_ARGUMENT",
-      "description": "In directories, ignore files that end with ‘~’.  This option is equivalent to ‘--ignore\u003d\u0027*~\u0027 --ignore\u003d\u0027.*~\u0027’.",
       "isLong": false
     },
     {
@@ -157,69 +79,9 @@
       "isLong": false
     },
     {
-      "name": "D",
-      "argumentType": "NO_ARGUMENT",
-      "description": "With the long listing (‘-l’) format, print an additional line after the main output:",
-      "isLong": false
-    },
-    {
-      "name": "F",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Append a character to each file name indicating the file type. Also, for regular files that are executable, append ‘*’.  The file type indicators are ‘/’ for directories, ‘@’ for symbolic links, ‘|’ for FIFOs, ‘\u003d’ for sockets, ‘\u003e’ for doors, and nothing for regular files.  Do not follow symbolic links listed on the command line unless the ‘--dereference-command-line’ (‘-H’), ‘--dereference’ (‘-L’), or ‘--dereference-command-line-symlink-to-dir’ options are specified.",
-      "isLong": false
-    },
-    {
-      "name": "G",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Inhibit display of group information in a long format directory listing.  (This is the default in some non-GNU versions of ‘ls’, so we provide this option for compatibility.)",
-      "isLong": false
-    },
-    {
-      "name": "H",
-      "argumentType": "NO_ARGUMENT",
-      "description": "If a command line argument specifies a symbolic link, show information for the file the link references rather than for the link itself.",
-      "isLong": false
-    },
-    {
-      "name": "I",
-      "argumentType": "ARGUMENT_REQUIRED",
-      "description": "In directories, ignore files whose names match the shell pattern (not regular expression) PATTERN.  As in the shell, an initial ‘.’ in a file name does not match a wildcard at the start of PATTERN. Sometimes it is useful to give this option several times.  For example,",
-      "isLong": false
-    },
-    {
-      "name": "L",
-      "argumentType": "NO_ARGUMENT",
-      "description": "When showing file information for a symbolic link, show information for the file the link references rather than the link itself. However, even with this option, ‘ls’ still prints the name of the link itself, not the name of the file that the link points to.",
-      "isLong": false
-    },
-    {
-      "name": "N",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Do not quote file names.  However, with ‘ls’ nongraphic characters are still printed as question marks if the output is a terminal and you do not specify the ‘--show-control-chars’ option.",
-      "isLong": false
-    },
-    {
-      "name": "Q",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Enclose file names in double quotes and quote nongraphic characters as in C.",
-      "isLong": false
-    },
-    {
-      "name": "R",
-      "argumentType": "NO_ARGUMENT",
-      "description": "List the contents of all directories recursively.",
-      "isLong": false
-    },
-    {
       "name": "S",
       "argumentType": "NO_ARGUMENT",
       "description": "Sort by file size, largest first.",
-      "isLong": false
-    },
-    {
-      "name": "T",
-      "argumentType": "ARGUMENT_REQUIRED",
-      "description": "Assume that each tab stop is COLS columns wide.  The default is 8. ‘ls’ uses tabs where possible in the output, for efficiency.  If COLS is zero, do not use tabs at all.",
       "isLong": false
     },
     {
@@ -232,12 +94,6 @@
       "name": "X",
       "argumentType": "NO_ARGUMENT",
       "description": "Sort directory contents alphabetically by file extension (characters after the last ‘.’); files with no extension are sorted first.",
-      "isLong": false
-    },
-    {
-      "name": "Z",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Display the SELinux security context or ‘?’ if none is found.  When used with the ‘-l’ option, print the security context to the left of the size column.",
       "isLong": false
     },
     {

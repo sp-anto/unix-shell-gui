@@ -1,0 +1,21 @@
+{
+  "name": "expr",
+  "shortDescription": "evaluate expressions",
+  "longDescription": "--help display this help and exit",
+  "syntaxes": [
+    "expr EXPRESSION",
+    "expr OPTION"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

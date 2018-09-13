@@ -1,0 +1,33 @@
+{
+  "name": "sum",
+  "shortDescription": "checksum and count the blocks in a file",
+  "longDescription": "Print checksum and block counts for each FILE.",
+  "syntaxes": [
+    "sum [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "r",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Use the default (BSD compatible) algorithm.  This option is included for compatibility with the System V ‘sum’.  Unless ‘-s’ was also given, it has no effect.",
+      "isLong": false
+    },
+    {
+      "name": "sysv",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Compute checksums using an algorithm compatible with System V ‘sum’’s default, and print file sizes in units of 512-byte blocks.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

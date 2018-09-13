@@ -1,0 +1,193 @@
+{
+  "name": "od",
+  "shortDescription": "dump files in octal and other formats",
+  "longDescription": "Write  an  unambiguous representation, octal bytes by default, of FILE to standard output.  With more than one FILE argument, concatenate them in the listed order to form the input.",
+  "syntaxes": [
+    "od [OPTION]... [FILE]...",
+    "od [-abcdfilosx]... [FILE] [[+]OFFSET[.][b]]",
+    "od --traditional [OPTION]... [FILE] [[+]OFFSET[.][b] [+][LABEL][.][b]]"
+  ],
+  "options": [
+    {
+      "name": "a",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as named characters.  Equivalent to ‘-t a’.",
+      "isLong": false
+    },
+    {
+      "name": "B",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "b",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as octal bytes.  Equivalent to ‘-t o1’.",
+      "isLong": false
+    },
+    {
+      "name": "c",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as printable single byte characters, C backslash escapes or 3 digit octal sequences.  Equivalent to ‘-t c’.",
+      "isLong": false
+    },
+    {
+      "name": "D",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "d",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as unsigned decimal two-byte units.  Equivalent to ‘-t u2’.",
+      "isLong": false
+    },
+    {
+      "name": "e",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "F",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "f",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as floats.  Equivalent to ‘-t fF’.",
+      "isLong": false
+    },
+    {
+      "name": "H",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "h",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "I",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as decimal ints.  Equivalent to ‘-t dI’.",
+      "isLong": false
+    },
+    {
+      "name": "L",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "l",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as decimal long ints.  Equivalent to ‘-t dL’.",
+      "isLong": false
+    },
+    {
+      "name": "O",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "o",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as octal two-byte units.  Equivalent to ‘-t o2’.",
+      "isLong": false
+    },
+    {
+      "name": "s",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as decimal two-byte units.  Equivalent to ‘-t d2’.",
+      "isLong": false
+    },
+    {
+      "name": "X",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "x",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Output as hexadecimal two-byte units.  Equivalent to ‘-t x2’.",
+      "isLong": false
+    },
+    {
+      "name": "skip-bytes",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "j",
+      "description": "Skip BYTES input bytes before formatting and writing.  If BYTES begins with ‘0x’ or ‘0X’, it is interpreted in hexadecimal; otherwise, if it begins with ‘0’, in octal; otherwise, in decimal. BYTES may be, or may be an integer optionally followed by, one of the following multiplicative suffixes: ‘b’  \u003d\u003e            512 (\"blocks\") ‘KB’ \u003d\u003e           1000 (KiloBytes) ‘K’  \u003d\u003e           1024 (KibiBytes) ‘MB’ \u003d\u003e      1000*1000 (MegaBytes) ‘M’  \u003d\u003e      1024*1024 (MebiBytes) ‘GB’ \u003d\u003e 1000*1000*1000 (GigaBytes) ‘G’  \u003d\u003e 1024*1024*1024 (GibiBytes) and so on for ‘T’, ‘P’, ‘E’, ‘Z’, and ‘Y’.",
+      "isLong": true
+    },
+    {
+      "name": "address-radix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "A",
+      "description": "Select the base in which file offsets are printed.  RADIX can be one of the following:",
+      "isLong": true
+    },
+    {
+      "name": "read-bytes",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "N",
+      "description": "Output at most BYTES bytes of the input.  Prefixes and suffixes on ‘bytes’ are interpreted as for the ‘-j’ option.",
+      "isLong": true
+    },
+    {
+      "name": "format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Select the format in which to output the file data.  TYPE is a string of one or more of the below type indicator characters.  If you include more than one type indicator character in a single TYPE string, or use this option more than once, ‘od’ writes one copy of each output line using each of the data types that you specified, in the order that you specified.",
+      "isLong": true
+    },
+    {
+      "name": "output-duplicates",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Output consecutive lines that are identical.  By default, when two or more consecutive output lines would be identical, ‘od’ outputs only the first line, and puts just an asterisk on the following line to indicate the elision.",
+      "isLong": true
+    },
+    {
+      "name": "strings",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "S",
+      "description": "Instead of the normal output, output only “string constants”: at least BYTES consecutive ASCII graphic characters, followed by a zero byte (ASCII NUL). Prefixes and suffixes on BYTES are interpreted as for the ‘-j’ option.",
+      "isLong": true
+    },
+    {
+      "name": "traditional",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Recognize the non-option label argument that traditional ‘od’ accepted.  The following syntax:",
+      "isLong": true
+    },
+    {
+      "name": "width",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "w",
+      "description": "Dump ‘n’ input bytes per output line.  This must be a multiple of the least common multiple of the sizes associated with the specified output types.",
+      "isLong": true
+    },
+    {
+      "name": "endian",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Reorder input bytes, to handle inputs with differing byte orders, or to provide consistent output independent of the endian convention of the current system.  Swapping is performed according to the specified ‘--type’ size and endian ORDER, which can be ‘little’ or ‘big’.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "dirname",
+  "shortDescription": "strip last component from file name",
+  "longDescription": "Output each NAME with its last non-slash component and trailing slashes removed; if NAME contains no /\u0027s, out‐ put \u0027.\u0027 (meaning the current directory).",
+  "syntaxes": [
+    "dirname [OPTION] NAME..."
+  ],
+  "options": [
+    {
+      "name": "zero",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Output a zero byte (ASCII NUL) at the end of each line, rather than a newline.  This option enables other programs to parse the output even when that output would contain data with embedded newlines.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

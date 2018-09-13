@@ -1,0 +1,41 @@
+{
+  "name": "paste",
+  "shortDescription": "merge lines of files",
+  "longDescription": "Write  lines consisting of the sequentially corresponding lines from each FILE, separated by TABs, to standard output.",
+  "syntaxes": [
+    "paste [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "serial",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Paste the lines of one file at a time rather than one line from each file.  Using the above example data:",
+      "isLong": true
+    },
+    {
+      "name": "delimiters",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "Consecutively use the characters in DELIM-LIST instead of TAB to separate merged lines.  When DELIM-LIST is exhausted, start again at its beginning.  Using the above example data:",
+      "isLong": true
+    },
+    {
+      "name": "zero-terminated",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Delimit items with a zero byte rather than a newline (ASCII LF). I.e., treat input as items separated by ASCII NUL and terminate output items with ASCII NUL. This option can be useful in conjunction with ‘perl -0’ or ‘find -print0’ and ‘xargs -0’ which do the same in order to reliably handle arbitrary file names (even those containing blanks or other special characters).",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

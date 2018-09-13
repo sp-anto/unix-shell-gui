@@ -1,0 +1,95 @@
+{
+  "name": "rm",
+  "shortDescription": "remove files or directories",
+  "longDescription": "This  manual  page  documents the GNU version of rm.  rm removes each specified file.  By default, it does not remove directories.",
+  "syntaxes": [
+    "rm [OPTION]... [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Prompt whether to remove each file.  If the response is not affirmative, the file is skipped.  Ignore any previous ‘--force’ (‘-f’) option.  Equivalent to ‘--interactive\u003dalways’.",
+      "isLong": false
+    },
+    {
+      "name": "I",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Prompt once whether to proceed with the command, if more than three files are named or if a recursive removal is requested.  Ignore any previous ‘--force’ (‘-f’) option.  Equivalent to ‘--interactive\u003donce’.",
+      "isLong": false
+    },
+    {
+      "name": "R",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Remove the listed directories and their contents recursively.",
+      "isLong": false
+    },
+    {
+      "name": "force",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "Ignore nonexistent files and missing operands, and never prompt the user.  Ignore any previous ‘--interactive’ (‘-i’) option.",
+      "isLong": true
+    },
+    {
+      "name": "interactive",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Specify when to issue an interactive prompt.  WHEN may be omitted, or one of: • never - Do not prompt at all. • once - Prompt once if more than three files are named or if a recursive removal is requested.  Equivalent to ‘-I’. • always - Prompt for every file being removed.  Equivalent to ‘-i’. ‘--interactive’ with no WHEN is equivalent to ‘--interactive\u003dalways’.",
+      "isLong": true
+    },
+    {
+      "name": "one-file-system",
+      "argumentType": "NO_ARGUMENT",
+      "description": "When removing a hierarchy recursively, skip any directory that is on a file system different from that of the corresponding command line argument.",
+      "isLong": true
+    },
+    {
+      "name": "no-preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Do not treat ‘/’ specially when removing recursively.  This option is not recommended unless you really want to remove all the files on your computer.",
+      "isLong": true
+    },
+    {
+      "name": "preserve-root",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Fail upon any attempt to remove the root directory, ‘/’, when used with the ‘--recursive’ option.  This is the default behavior.",
+      "isLong": true
+    },
+    {
+      "name": "-presume-input-tty",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Remove the listed directories and their contents recursively.",
+      "isLong": true
+    },
+    {
+      "name": "dir",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Remove the listed directories if they are empty.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the name of each file before removing it.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

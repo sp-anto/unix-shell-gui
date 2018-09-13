@@ -1,0 +1,148 @@
+{
+  "name": "logger",
+  "shortDescription": "enter messages into the system log",
+  "longDescription": "logger makes entries in the system log.",
+  "syntaxes": [
+    "logger [options] [message]"
+  ],
+  "options": [
+    {
+      "name": "i",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "id",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "stderr",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "isLong": true
+    },
+    {
+      "name": "no-act",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "priority",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "p",
+      "isLong": true
+    },
+    {
+      "name": "tag",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "isLong": true
+    },
+    {
+      "name": "socket",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "u",
+      "isLong": true
+    },
+    {
+      "name": "socket-errors",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "udp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "isLong": true
+    },
+    {
+      "name": "tcp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "isLong": true
+    },
+    {
+      "name": "server",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "n",
+      "isLong": true
+    },
+    {
+      "name": "port",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "P",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "isLong": true
+    },
+    {
+      "name": "octet-count",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "prio-prefix",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "rfc3164",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "rfc5424",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "size",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "isLong": true
+    },
+    {
+      "name": "msgid",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "skip-empty",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "e",
+      "isLong": true
+    },
+    {
+      "name": "sd-id",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "sd-param",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "journald",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

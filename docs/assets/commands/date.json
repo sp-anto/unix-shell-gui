@@ -1,0 +1,107 @@
+{
+  "name": "date",
+  "shortDescription": "print or set the system date and time",
+  "longDescription": "Display the current time in the given FORMAT, or set the system date.",
+  "syntaxes": [
+    "date [OPTION]... [+FORMAT]",
+    "date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]"
+  ],
+  "options": [
+    {
+      "name": "date",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "Display the date and time specified in DATESTR instead of the current date and time.  DATESTR can be in almost any common format. It can contain month names, time zones, ‘am’ and ‘pm’, ‘yesterday’, etc.  For example, ‘--date\u003d\"2004-02-27 14:19:13.489392193 +0530\"’ specifies the instant of time that is 489,392,193 nanoseconds after February 27, 2004 at 2:19:13 PM in a time zone that is 5 hours and 30 minutes east of UTC. Note: input currently must be in locale independent format.  E.g., the LC_TIME\u003dC below is needed to print back the correct date in many locales: date -d \"$(LC_TIME\u003dC date)\"",
+      "isLong": true
+    },
+    {
+      "name": "debug",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Annotate the parsed date, display the effective time zone, and warn about potential misuse.",
+      "isLong": true
+    },
+    {
+      "name": "file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Parse each line in DATEFILE as with ‘-d’ and display the resulting date and time.  If DATEFILE is ‘-’, use standard input.  This is useful when you have many dates to process, because the system overhead of starting up the ‘date’ executable many times can be considerable.",
+      "isLong": true
+    },
+    {
+      "name": "iso-8601",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "I",
+      "description": "Display the date using an ISO 8601 format, ‘%Y-%m-%d’.",
+      "isLong": true
+    },
+    {
+      "name": "reference",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "r",
+      "description": "Display the date and time of the last modification of FILE, instead of the current date and time.",
+      "isLong": true
+    },
+    {
+      "name": "rfc-email",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "Display the date and time using the format ‘%a, %d %b %Y %H:%M:%S %z’, evaluated in the C locale so abbreviations are always in English.  For example:",
+      "isLong": true
+    },
+    {
+      "name": "rfc-822",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "isLong": true
+    },
+    {
+      "name": "rfc-2822",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "isLong": true
+    },
+    {
+      "name": "rfc-3339",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Display the date using a format specified by Internet RFC 3339 (https://tools.ietf.org/search/rfc3339).  This is like ‘--iso-8601’, except that a space rather than a ‘T’ separates dates from times.  This format is always suitable as input for the ‘--date’ (‘-d’) and ‘--file’ (‘-f’) options, regardless of the current locale.",
+      "isLong": true
+    },
+    {
+      "name": "set",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Set the date and time to DATESTR.  See ‘-d’ above.  See also *note Setting the time::.",
+      "isLong": true
+    },
+    {
+      "name": "uct",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "isLong": true
+    },
+    {
+      "name": "utc",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Use Universal Time by operating as if the ‘TZ’ environment variable were set to the string ‘UTC0’.  UTC stands for Coordinated Universal Time, established in 1960.  Universal Time is often called “Greenwich Mean Time” (GMT) for historical reasons. Typically, systems ignore leap seconds and thus implement an approximation to UTC rather than true UTC.",
+      "isLong": true
+    },
+    {
+      "name": "universal",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Use Universal Time by operating as if the ‘TZ’ environment variable were set to the string ‘UTC0’.  UTC stands for Coordinated Universal Time, established in 1960.  Universal Time is often called “Greenwich Mean Time” (GMT) for historical reasons. Typically, systems ignore leap seconds and thus implement an approximation to UTC rather than true UTC.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

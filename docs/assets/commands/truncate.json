@@ -1,0 +1,48 @@
+{
+  "name": "truncate",
+  "shortDescription": "shrink or extend the size of a file to the specified size",
+  "longDescription": "Shrink or extend the size of each FILE to the specified size",
+  "syntaxes": [
+    "truncate OPTION... FILE..."
+  ],
+  "options": [
+    {
+      "name": "no-create",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Do not create files that do not exist.",
+      "isLong": true
+    },
+    {
+      "name": "io-blocks",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "o",
+      "description": "Treat SIZE as number of I/O blocks of the FILE rather than bytes.",
+      "isLong": true
+    },
+    {
+      "name": "reference",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "r",
+      "description": "Base the size of each FILE on the size of RFILE.",
+      "isLong": true
+    },
+    {
+      "name": "size",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "s",
+      "description": "Set or adjust the size of each FILE according to SIZE.  SIZE is in bytes unless ‘--io-blocks’ is specified.  SIZE may be, or may be an integer optionally followed by, one of the following multiplicative suffixes: ‘KB’ \u003d\u003e           1000 (KiloBytes) ‘K’  \u003d\u003e           1024 (KibiBytes) ‘MB’ \u003d\u003e      1000*1000 (MegaBytes) ‘M’  \u003d\u003e      1024*1024 (MebiBytes) ‘GB’ \u003d\u003e 1000*1000*1000 (GigaBytes) ‘G’  \u003d\u003e 1024*1024*1024 (GibiBytes) and so on for ‘T’, ‘P’, ‘E’, ‘Z’, and ‘Y’.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

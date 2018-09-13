@@ -1,0 +1,224 @@
+{
+  "name": "cp",
+  "shortDescription": "copy files and directories",
+  "longDescription": "Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.",
+  "syntaxes": [
+    "cp [OPTION]... [-T] SOURCE DEST",
+    "cp [OPTION]... SOURCE... DIRECTORY",
+    "cp [OPTION]... -t DIRECTORY SOURCE..."
+  ],
+  "options": [
+    {
+      "name": "d",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Copy symbolic links as symbolic links rather than copying the files that they point to, and preserve hard links between source files in the copies.  Equivalent to ‘--no-dereference --preserve\u003dlinks’.",
+      "isLong": false
+    },
+    {
+      "name": "H",
+      "argumentType": "NO_ARGUMENT",
+      "description": "If a command line argument specifies a symbolic link, then copy the file it points to rather than the symbolic link itself.  However, copy (preserving its nature) any symbolic link that is encountered via recursive traversal.",
+      "isLong": false
+    },
+    {
+      "name": "p",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Preserve the specified attributes of the original files.  If specified, the ATTRIBUTE_LIST must be a comma-separated list of one or more of the following strings:",
+      "isLong": false
+    },
+    {
+      "name": "r",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Copy directories recursively.  By default, do not follow symbolic links in the source unless used together with the ‘--link’ (‘-l’) option; see the ‘--archive’ (‘-a’), ‘-d’, ‘--dereference’ (‘-L’), ‘--no-dereference’ (‘-P’), and ‘-H’ options.  Special files are copied by creating a destination file of the same type as the source; see the ‘--copy-contents’ option.  It is not portable to use ‘-r’ to copy symbolic links or special files.  On some non-GNU systems, ‘-r’ implies the equivalent of ‘-L’ and ‘--copy-contents’ for historical reasons.  Also, it is not portable to use ‘-R’ to copy symbolic links unless you also specify ‘-P’, as POSIX allows implementations that dereference symbolic links by default.",
+      "isLong": false
+    },
+    {
+      "name": "archive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "description": "Preserve as much as possible of the structure and attributes of the original files in the copy (but do not attempt to preserve internal directory structure; i.e., ‘ls -U’ may list the entries in a copied directory in a different order).  Try to preserve SELinux security context and extended attributes (xattr), but ignore any failure to do that and print no corresponding diagnostic.  Equivalent to ‘-dR --preserve\u003dall’ with the reduced diagnostics.",
+      "isLong": true
+    },
+    {
+      "name": "attributes-only",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Copy only the specified attributes of the source file to the destination.  If the destination already exists, do not alter its contents.  See the ‘--preserve’ option for controlling which attributes to copy.",
+      "isLong": true
+    },
+    {
+      "name": "backup",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "b",
+      "description": "acts to rename or remove the destination before copying, ‘cp’ renames or removes the symbolic link rather than the file it points to.",
+      "isLong": true
+    },
+    {
+      "name": "copy-contents",
+      "argumentType": "NO_ARGUMENT",
+      "description": "If copying recursively, copy the contents of any special files (e.g., FIFOs and device files) as if they were regular files.  This means trying to read the data in each source file and writing it to the destination.  It is usually a mistake to use this option, as it normally has undesirable effects on special files like FIFOs and the ones typically found in the ‘/dev’ directory.  In most cases, ‘cp -R --copy-contents’ will hang indefinitely trying to read from FIFOs and special files like ‘/dev/console’, and it will fill up your destination disk if you use it to copy ‘/dev/zero’.  This option has no effect unless copying recursively, and it does not affect the copying of symbolic links.",
+      "isLong": true
+    },
+    {
+      "name": "dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "Follow symbolic links when copying from them.  With this option, ‘cp’ cannot create a symbolic link.  For example, a symlink (to regular file) in the source tree will be copied to a regular file in the destination tree.",
+      "isLong": true
+    },
+    {
+      "name": "force",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "description": "When copying without this option and an existing destination file cannot be opened for writing, the copy fails.  However, with ‘--force’, when a destination file cannot be opened, ‘cp’ then removes it and tries to open it again.  When this option is combined with ‘--link’ (‘-l’) or ‘--symbolic-link’ (‘-s’), the destination link is replaced, and unless ‘--backup’ (‘-b’) is also given there is no brief moment when the destination does not exist. Also see the description of ‘--remove-destination’.",
+      "isLong": true
+    },
+    {
+      "name": "interactive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "When copying a file other than a directory, prompt whether to overwrite an existing destination file.  The ‘-i’ option overrides a previous ‘-n’ option.",
+      "isLong": true
+    },
+    {
+      "name": "link",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "description": "acts to rename or remove the destination before copying, ‘cp’ renames or removes the symbolic link rather than the file it points to.",
+      "isLong": true
+    },
+    {
+      "name": "no-clobber",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Do not overwrite an existing file.  The ‘-n’ option overrides a previous ‘-i’ option.  This option is mutually exclusive with ‘-b’ or ‘--backup’ option.",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "description": "Copy symbolic links as symbolic links rather than copying the files that they point to.  This option affects only symbolic links in the source; symbolic links in the destination are always followed if possible.",
+      "isLong": true
+    },
+    {
+      "name": "no-preserve",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Do not preserve the specified attributes.  The ATTRIBUTE_LIST has the same form as for ‘--preserve’.",
+      "isLong": true
+    },
+    {
+      "name": "no-target-directory",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "(‘-T’) option is not given, ‘cp’ copies each SOURCE file to the specified directory, using the SOURCEs’ names.",
+      "isLong": true
+    },
+    {
+      "name": "one-file-system",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "x",
+      "description": "Skip subdirectories that are on different file systems from the one that the copy started on.  However, mount point directories _are_ copied.",
+      "isLong": true
+    },
+    {
+      "name": "parents",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Form the name of each destination file by appending to the target directory a slash and the specified name of the source file.  The last argument given to ‘cp’ must be the name of an existing directory.  For example, the command:",
+      "isLong": true
+    },
+    {
+      "name": "path",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "preserve",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Preserve the specified attributes of the original files.  If specified, the ATTRIBUTE_LIST must be a comma-separated list of one or more of the following strings:",
+      "isLong": true
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "Copy directories recursively.  By default, do not follow symbolic links in the source unless used together with the ‘--link’ (‘-l’) option; see the ‘--archive’ (‘-a’), ‘-d’, ‘--dereference’ (‘-L’), ‘--no-dereference’ (‘-P’), and ‘-H’ options.  Special files are copied by creating a destination file of the same type as the source; see the ‘--copy-contents’ option.  It is not portable to use ‘-r’ to copy symbolic links or special files.  On some non-GNU systems, ‘-r’ implies the equivalent of ‘-L’ and ‘--copy-contents’ for historical reasons.  Also, it is not portable to use ‘-R’ to copy symbolic links unless you also specify ‘-P’, as POSIX allows implementations that dereference symbolic links by default.",
+      "isLong": true
+    },
+    {
+      "name": "remove-destination",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Remove each existing destination file before attempting to open it (contrast with ‘-f’ above).",
+      "isLong": true
+    },
+    {
+      "name": "sparse",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "A “sparse file” contains “holes”—a sequence of zero bytes that does not occupy any physical disk blocks; the ‘read’ system call reads these as zeros.  This can both save considerable disk space and increase speed, since many binary files contain lots of consecutive zero bytes.  By default, ‘cp’ detects holes in input source files via a crude heuristic and makes the corresponding output file sparse as well.  Only regular files may be sparse.",
+      "isLong": true
+    },
+    {
+      "name": "reflink",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Perform a lightweight, copy-on-write (COW) copy, if supported by the file system.  Once it has succeeded, beware that the source and destination files share the same disk data blocks as long as they remain unmodified.  Thus, if a disk I/O error affects data blocks of one of the files, the other suffers the same fate.",
+      "isLong": true
+    },
+    {
+      "name": "strip-trailing-slashes",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Remove any trailing slashes from each SOURCE argument.",
+      "isLong": true
+    },
+    {
+      "name": "suffix",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "description": "Append SUFFIX to each backup file made with ‘-b’.",
+      "isLong": true
+    },
+    {
+      "name": "symbolic-link",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Make symbolic links instead of copies of non-directories.  All source file names must be absolute (starting with ‘/’) unless the destination files are in the current directory.  This option merely results in an error message on systems that do not support symbolic links.",
+      "isLong": true
+    },
+    {
+      "name": "target-directory",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "t",
+      "description": "Specify the destination DIRECTORY.",
+      "isLong": true
+    },
+    {
+      "name": "update",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "description": "Do not copy a non-directory that has an existing destination with the same or newer modification timestamp.  If timestamps are being preserved, the comparison is to the source timestamp truncated to the resolutions of the destination file system and of the system calls used to update timestamps; this avoids duplicate work if several ‘cp -pu’ commands are executed with the same source and destination.  If ‘--preserve\u003dlinks’ is also specified (like with ‘cp -au’ for example), that will take precedence.  Consequently, depending on the order that files are processed from the source, newer files in the destination may be replaced, to mirror hard links in the source.",
+      "isLong": true
+    },
+    {
+      "name": "verbose",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Print the name of each file before copying it.",
+      "isLong": true
+    },
+    {
+      "name": "context",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "Z",
+      "description": "Without a specified CONTEXT, adjust the SELinux security context according to the system default type for destination files, similarly to the ‘restorecon’ command.  The long form of this option with a specific context specified, will set the context for newly created files only.  With a specified context, if both SELinux and SMACK are disabled, a warning is issued.  This option is mutually exclusive with the ‘--preserve\u003dcontext’ option, and overrides the ‘--preserve\u003dall’ and ‘-a’ options.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "name": "who",
+  "shortDescription": "show who is logged on",
+  "longDescription": "Print information about users who are currently logged in.",
+  "syntaxes": [
+    "who [OPTION]... [ FILE | ARG1 ARG2 ]"
+  ],
+  "options": [
+    {
+      "name": "m",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Same as ‘who am i’.",
+      "isLong": false
+    },
+    {
+      "name": "w",
+      "argumentType": "NO_ARGUMENT",
+      "description": "After each login name print a character indicating the user’s message status:",
+      "isLong": false
+    },
+    {
+      "name": "all",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "description": "Same as ‘-b -d --login -p -r -t -T -u’.",
+      "isLong": true
+    },
+    {
+      "name": "boot",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Print the date and time of last system boot.",
+      "isLong": true
+    },
+    {
+      "name": "count",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Print only the login names and the number of users logged on. Overrides all other options.",
+      "isLong": true
+    },
+    {
+      "name": "dead",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "description": "Print information corresponding to dead processes.",
+      "isLong": true
+    },
+    {
+      "name": "heading",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "H",
+      "description": "Print a line of column headings.",
+      "isLong": true
+    },
+    {
+      "name": "ips",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "login",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "description": "List only the entries that correspond to processes via which the system is waiting for a user to login.  The user name is always ‘LOGIN’.",
+      "isLong": true
+    },
+    {
+      "name": "lookup",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Attempt to canonicalize hostnames found in utmp through a DNS lookup.  This is not the default because it can cause significant delays on systems with automatic dial-up internet access.",
+      "isLong": true
+    },
+    {
+      "name": "message",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "After each login name print a character indicating the user’s message status:",
+      "isLong": true
+    },
+    {
+      "name": "mesg",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "After each login name print a character indicating the user’s message status:",
+      "isLong": true
+    },
+    {
+      "name": "process",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "description": "List active processes spawned by init.",
+      "isLong": true
+    },
+    {
+      "name": "runlevel",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "Print the current (and maybe previous) run-level of the init process.",
+      "isLong": true
+    },
+    {
+      "name": "short",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "time",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "description": "Print last system clock change.",
+      "isLong": true
+    },
+    {
+      "name": "users",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "u",
+      "isLong": true
+    },
+    {
+      "name": "writable",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "After each login name print a character indicating the user’s message status:",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

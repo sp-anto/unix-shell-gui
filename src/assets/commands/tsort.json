@@ -1,0 +1,20 @@
+{
+  "name": "tsort",
+  "shortDescription": "perform topological sort",
+  "longDescription": "Write totally ordered list consistent with the partial ordering in FILE.",
+  "syntaxes": [
+    "tsort [OPTION] [FILE]"
+  ],
+  "options": [
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}

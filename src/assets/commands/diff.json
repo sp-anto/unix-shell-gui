@@ -1,0 +1,408 @@
+{
+  "name": "diff",
+  "shortDescription": "compare files line by line",
+  "longDescription": "Compare FILES line by line.",
+  "syntaxes": [
+    "diff [OPTION]... FILES"
+  ],
+  "options": [
+    {
+      "name": "0",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "1",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "2",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "3",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "4",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "5",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "6",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "7",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "8",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "9",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "c",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "h",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "u",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": false
+    },
+    {
+      "name": "binary",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "brief",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "isLong": true
+    },
+    {
+      "name": "changed-group-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "color",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "context",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "C",
+      "isLong": true
+    },
+    {
+      "name": "ed",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "e",
+      "isLong": true
+    },
+    {
+      "name": "exclude",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "x",
+      "isLong": true
+    },
+    {
+      "name": "exclude-from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "X",
+      "isLong": true
+    },
+    {
+      "name": "expand-tabs",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "t",
+      "isLong": true
+    },
+    {
+      "name": "forward-ed",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "f",
+      "isLong": true
+    },
+    {
+      "name": "from-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "horizon-lines",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "ifdef",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "D",
+      "isLong": true
+    },
+    {
+      "name": "ignore-all-space",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "w",
+      "isLong": true
+    },
+    {
+      "name": "ignore-blank-lines",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "B",
+      "isLong": true
+    },
+    {
+      "name": "ignore-case",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "isLong": true
+    },
+    {
+      "name": "ignore-file-name-case",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "ignore-matching-lines",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "I",
+      "isLong": true
+    },
+    {
+      "name": "ignore-space-change",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "isLong": true
+    },
+    {
+      "name": "ignore-tab-expansion",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "E",
+      "isLong": true
+    },
+    {
+      "name": "ignore-trailing-space",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "Z",
+      "isLong": true
+    },
+    {
+      "name": "inhibit-hunk-merge",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "initial-tab",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "isLong": true
+    },
+    {
+      "name": "label",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "L",
+      "isLong": true
+    },
+    {
+      "name": "left-column",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "line-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "minimal",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "d",
+      "isLong": true
+    },
+    {
+      "name": "new-file",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "N",
+      "isLong": true
+    },
+    {
+      "name": "new-group-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "new-line-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "no-dereference",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "no-ignore-file-name-case",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "normal",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "old-group-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "old-line-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "paginate",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "isLong": true
+    },
+    {
+      "name": "palette",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "rcs",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "isLong": true
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "isLong": true
+    },
+    {
+      "name": "report-identical-files",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "isLong": true
+    },
+    {
+      "name": "sdiff-merge-assist",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "show-c-function",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "p",
+      "isLong": true
+    },
+    {
+      "name": "show-function-line",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "F",
+      "isLong": true
+    },
+    {
+      "name": "side-by-side",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "y",
+      "isLong": true
+    },
+    {
+      "name": "speed-large-files",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "H",
+      "isLong": true
+    },
+    {
+      "name": "starting-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "S",
+      "isLong": true
+    },
+    {
+      "name": "strip-trailing-cr",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "suppress-blank-empty",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "suppress-common-lines",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    },
+    {
+      "name": "tabsize",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "text",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "isLong": true
+    },
+    {
+      "name": "to-file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "unchanged-group-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "unchanged-line-format",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "isLong": true
+    },
+    {
+      "name": "unidirectional-new-file",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "isLong": true
+    },
+    {
+      "name": "unified",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "U",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "isLong": true
+    },
+    {
+      "name": "width",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "W",
+      "isLong": true
+    },
+    {
+      "name": "-presume-output-tty",
+      "argumentType": "NO_ARGUMENT",
+      "isLong": true
+    }
+  ]
+}
