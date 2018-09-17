@@ -22,11 +22,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   private console: string;
   private operator: object;
   private operators: object[] = [{name: '\\n', replace: '\n', description: 'New Line'},
-    {name: '|', description: 'Bitwise OR'}, {name: '&&', description: 'Logical AND'}, {name: '||', description: 'Logical OR'},
+    {name: '|', description: 'Pipe commands'}, {name: '&&', description: 'Logical AND'}, {name: '||', description: 'Logical OR'},
     {name: '-eq', description: 'Is equal to'}, {name: '-ne', description: 'Is not equal to'}, {name: '-gt', description: 'Is greater than'},
     {name: '-gt', description: 'Is greater than or equals to'}, {name: '-lt', description: 'Is less than'},
     {name: '-le', description: 'Is less than or equal to'}];
   private structures: object[] = [{name: 'if-then-elif-fi'}, {name: 'while-do-done'}, {name: 'case-esac'}];
+  private isOptionMultiple: boolean;
+  private isOptionOptional: boolean;
 
   constructor(private commandService: CommandService) {
   }
@@ -58,25 +60,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  removeDuplicateOptions(): void {
-    const optionsToRemove = [];
-    for (let i = 0; i < this.command.options.length; i++) {
-      const option = this.command.options[i];
-      if (this.isNotEquivalentOfOther(option)) {
-        optionsToRemove.push(i);
-      }
-    }
-
-    for (let i = optionsToRemove.length - 1 ; i >= 0; i--) {
-      this.command.options.splice(i, 1);
-
-    }
-  }
-
   selectSyntax(syntax: string): void {
+    // initialize options from previous selection
+    for (const option of this.command.options) {
+      option.isSelected = false;
+      option.value = null;
+      option.isDisabled = null;
+    }
+
     this.selectedSyntax = syntax;
     const syntaxArgs = syntax.replace(this.command.name, '');
     let args = syntaxArgs.split(' ');
+    const options = args.find(value => value.includes('OPTION'));
+    if (options) {
+      this.isOptionMultiple = options.includes('...');
+      this.isOptionOptional = options.includes('[') && options.includes(']');
+    } else {
+      this.command.options.forEach(value => value.isDisabled = true);
+      this.isOptionMultiple = true;
+      this.isOptionOptional = true;
+    }
     args = args.filter(arg => arg.indexOf('OPTION') < 0 && arg !== '');
 
     this.arguments = [];
@@ -84,23 +87,22 @@ export class AppComponent implements OnInit, AfterViewInit {
       const isMultiple = arg.includes('...');
       const isOptional = arg.includes('[') && arg.includes(']');
       const name = arg.replace('...', '').replace('[', '').replace(']', '');
-      this.arguments.push({isMultiple: isMultiple, isOptional: isOptional, name: name, arg: arg});
-    }
 
-    for (const option of this.command.options) {
-      option.isSelected = false;
-      option.value = null;
-    }
-
-  }
-
-  isNotEquivalentOfOther(optionToCheck): boolean {
-    for (const option of this.command.options) {
-      if (optionToCheck.name === option.equivalent) {
-        return true;
+      let isOption = false;
+      if (name.includes('-')) {
+        let optName = name.replace('-', '').replace('-', '');
+        if (optName.includes('\u003d')) {
+          optName = optName.substring(0, optName.indexOf('\u003d'));
+        }
+        isOption = true;
+        if (!isOptional) {
+          const preselectedOption = this.command.options.find(value => optName === value.name || optName === value.equivalent);
+          preselectedOption.isSelected = true;
+          preselectedOption.isDisabled = true;
+        }
       }
+      this.arguments.push({isMultiple: isMultiple, isOptional: isOptional, name: name, arg: arg, isOption: isOption});
     }
-    return false;
   }
 
   optionClicked(option): void {
@@ -154,13 +156,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.console = result;
   }
 
-
   buildCommad(): string {
     if (this.command) {
       let optionsStr = '';
       for (const option of this.command.options) {
         if (option.isSelected) {
-          if (this.settings['useLongOptions'] && option.isLong) {
+          if ((this.settings['useLongOptions'] && option.isLong) || (option.isLong && !option.equivalent)) {
             optionsStr += '--' + option.name + (option.value ? '=' + option.value : '') + ' ';
           } else if (option.isLong) {
             optionsStr += '-' + option.equivalent + (option.value ? ' ' + option.value : '') + ' ';
@@ -169,9 +170,8 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         }
       }
-      let buildedCommand = this.selectedSyntax.replace('[OPTION]...', optionsStr);
+      let buildedCommand = this.selectedSyntax;
 
-      // let args = '';
       for (const arg of this.arguments) {
         let argValue = '';
         if (arg['value']) {
@@ -180,6 +180,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         buildedCommand = buildedCommand.replace(arg['arg'], argValue);
       }
 
+      buildedCommand = buildedCommand.replace('[OPTION]...', optionsStr).replace('[OPTION]', optionsStr)
+        .replace('OPTION...', optionsStr).replace('OPTION', optionsStr);
       buildedCommand = buildedCommand.replace(/ +/g, ' ');
       buildedCommand = buildedCommand.trim();
 
@@ -190,7 +192,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         comment = '# ' + shortDescription.substring(0, 1).toUpperCase() + shortDescription.substring(1) + '\n';
         for (const option of this.command.options) {
           if (option.isSelected) {
-            if (this.settings['useLongOptions'] && option.isLong) {
+            if (this.settings['useLongOptions'] && option.isLong || (option.isLong && !option.equivalent)) {
               comment += '# --' + option.name + ' ' + option.description + '\n';
             } else if (option.isLong) {
               comment += '# -' + option.equivalent + ' ' + option.description + '\n';
@@ -211,4 +213,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   copyCurrentCommand(): void {
     this.copyConsole(this.buildCommad());
   }
+
+  optionsError(): string {
+    if (!this.isOptionOptional) {
+      const selCom = this.command.options.find(value => value.isSelected);
+      if (!selCom) {
+        return 'At least one option must be selected. ';
+      }
+    }
+    if (!this.isOptionMultiple) {
+      if (this.command.options.filter(value => value.isSelected).length > 1) {
+        return 'Only one must be selected ';
+      }
+    }
+    return '';
+}
 }

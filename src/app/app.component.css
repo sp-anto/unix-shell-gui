@@ -20,12 +20,7 @@ div.options:nth-child(even):not(.hidden) {background: aliceblue}
   overflow-y: scroll;
 }
 
-/*.commandSelection {*/
-  /*display: initial;*/
-  /*width: auto;*/
-/*}*/
-
-input.error  {
+.error  {
   border-color: #a94442;
   border-left: 5px solid #a94442;
   box-shadow: 0 1px 1px #a94442 inset, 0 0 8px #a94442;

@@ -9,6 +9,7 @@ export class Option {
   private _description: string;
   private _isLong: boolean;
   private _isSelected: boolean;
+  private _isDisabled: boolean;
   private _value: string;
 
   get name(): string {
@@ -57,6 +58,15 @@ export class Option {
 
   set isSelected(value: boolean) {
     this._isSelected = value;
+  }
+
+
+  get isDisabled(): boolean {
+    return this._isDisabled;
+  }
+
+  set isDisabled(value: boolean) {
+    this._isDisabled = value;
   }
 
   get value(): string {
