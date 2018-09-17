@@ -4,7 +4,7 @@
   "longDescription": "Change the SELinux security context of each FILE to CONTEXT.  With --reference, change the security context of each FILE to that of RFILE.",
   "syntaxes": [
     "chcon [OPTION]... CONTEXT FILE...",
-    "chcon [OPTION]... [-u USER] [-r ROLE] [-l RANGE] [-t TYPE] FILE...",
+    "chcon [OPTION]... [--user=USER] [--role=ROLE] [--range=RANGE] [--type=TYPE] FILE...",
     "chcon [OPTION]... --reference\u003dRFILE FILE..."
   ],
   "options": [

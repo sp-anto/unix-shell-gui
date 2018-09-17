@@ -7,34 +7,31 @@
   ],
   "options": [
     {
-      "name": "C",
-      "argumentType": "NO_ARGUMENT",
-      "description": "option will cause it to complement the set of characters, whereas ‘-c’ will cause it to complement the set of values.  This distinction will matter only when some values are not characters, and this is possible only in locales using multibyte encodings when the input contains encoding errors.",
-      "isLong": false
-    },
-    {
       "name": "complement",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "c",
-      "description": "(‘-c’, ‘-C’) option replaces SET1 with its complement (all of the characters that are not in SET1).",
+      "description": "(‘-c’) option replaces SET1 with its complement (all of the characters that are not in SET1).",
       "isLong": true
     },
     {
       "name": "delete",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "d",
+      "description": "Delete characters in SET1, do not translate.",
       "isLong": true
     },
     {
       "name": "squeeze-repeats",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "s",
+      "description": "Replace  each  sequence of a repeated character that is listed in the last specified SET, with a single occurrence of that character.",
       "isLong": true
     },
     {
       "name": "truncate-set1",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "t",
+      "description": "First truncate SET1 to length of SET2.",
       "isLong": true
     },
     {

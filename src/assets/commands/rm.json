@@ -56,11 +56,6 @@
       "isLong": true
     },
     {
-      "name": "-presume-input-tty",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": true
-    },
-    {
       "name": "recursive",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "r",

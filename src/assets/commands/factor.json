@@ -8,11 +8,6 @@
   ],
   "options": [
     {
-      "name": "-debug",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": true
-    },
-    {
       "name": "help",
       "argumentType": "NO_ARGUMENT",
       "description": "Print a short help on standard output, then exit without further processing.",

@@ -3,25 +3,28 @@
   "shortDescription": "send a signal to a process",
   "longDescription": "The  default  signal  for  kill is TERM.  Use -l or -L to list available signals.  Particularly useful signals include HUP, INT, KILL, STOP, CONT, and 0.  Alternate signals may be specified in three ways: -9, -SIGKILL  or -KILL.  Negative PID values may be used to choose whole process groups; see the PGID column in ps command out‐ put.  A PID of -1 is special; it indicates all processes except the kill process itself and init.",
   "syntaxes": [
-    "kill [options] \u003cpid\u003e [...]"
+    "kill [OPTION]... [PID]..."
   ],
   "options": [
     {
       "name": "list",
       "argumentType": "OPTIONAL_ARGUMENT",
       "equivalent": "l",
+      "description" : "List  signal  names.   This option has optional argument, which will convert signal number to signal name, or other way round.",
       "isLong": true
     },
     {
       "name": "table",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "L",
+      "description" : "List signal names in a nice table.",
       "isLong": true
     },
     {
       "name": "signal",
       "argumentType": "ARGUMENT_REQUIRED",
       "equivalent": "s",
+      "description" : "Specify the signal to be sent.  The signal can be specified by using name or number.   The  behavior of signals is explained in signal(7) manual page.",
       "isLong": true
     },
     {

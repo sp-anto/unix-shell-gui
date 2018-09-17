@@ -13,12 +13,6 @@
       "isLong": true
     },
     {
-      "name": "path",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "p",
-      "isLong": true
-    },
-    {
       "name": "parents",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "p",
