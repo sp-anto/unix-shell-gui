@@ -74,11 +74,6 @@
       "isLong": true
     },
     {
-      "name": "-debug",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": true
-    },
-    {
       "name": "header",
       "argumentType": "OPTIONAL_ARGUMENT",
       "description": "Print the first N (default: 1) lines without any conversion.",

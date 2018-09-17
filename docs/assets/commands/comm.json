@@ -9,16 +9,19 @@
     {
       "name": "1",
       "argumentType": "NO_ARGUMENT",
+      "description": "Suppress column 1 (lines unique to FILE1)",
       "isLong": false
     },
     {
       "name": "2",
       "argumentType": "NO_ARGUMENT",
+      "description": "Suppress column 2 (lines unique to FILE2)",
       "isLong": false
     },
     {
       "name": "3",
       "argumentType": "NO_ARGUMENT",
+      "description": "Suppress column 3 (lines that appear in both files)",
       "isLong": false
     },
     {

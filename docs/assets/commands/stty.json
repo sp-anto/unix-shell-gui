@@ -3,9 +3,9 @@
   "shortDescription": "change and print terminal line settings",
   "longDescription": "Print or change terminal characteristics.",
   "syntaxes": [
-    "stty [-F DEVICE | --file\u003dDEVICE] [SETTING]...",
-    "stty [-F DEVICE | --file\u003dDEVICE] [-a|--all]",
-    "stty [-F DEVICE | --file\u003dDEVICE] [-g|--save]"
+    "stty [--file\u003dDEVICE] [SETTING]...",
+    "stty [--file\u003dDEVICE] [-a]",
+    "stty [--file\u003dDEVICE] [-g]"
   ],
   "options": [
     {

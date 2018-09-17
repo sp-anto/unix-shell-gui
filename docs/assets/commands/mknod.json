@@ -1,9 +1,10 @@
 {
   "name": "mknod",
   "shortDescription": "make block or character special files",
-  "longDescription": "Create the special file NAME of the given TYPE.",
+  "longDescription": "Create the special file NAME of the given TYPE. MAJOR and MINOR must be specified when TYPE is b, c, or u, and the must be omitted when TYPE is p.",
   "syntaxes": [
-    "mknod [OPTION]... NAME TYPE [MAJOR MINOR]"
+    "mknod [OPTION]... NAME TYPE MAJOR MINOR",
+    "mknod [OPTION]... NAME TYPE"
   ],
   "options": [
     {

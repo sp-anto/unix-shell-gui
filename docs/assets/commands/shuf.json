@@ -5,7 +5,7 @@
   "syntaxes": [
     "shuf [OPTION]... [FILE]",
     "shuf -e [OPTION]... [ARG]...",
-    "shuf -i LO-HI [OPTION]..."
+    "shuf --input-range=RANGE [OPTION]..."
   ],
   "options": [
     {

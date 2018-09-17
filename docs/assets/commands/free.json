@@ -3,107 +3,125 @@
   "shortDescription": "Display amount of free and used memory in the system",
   "longDescription": "free displays the total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. The information is gathered by parsing  /proc/meminfo.  The  displayed  columns are:",
   "syntaxes": [
-    "free [options]"
+    "free [OPTION]..."
   ],
   "options": [
     {
       "name": "bytes",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "b",
+      "description": "Show output in bytes.",
       "isLong": true
     },
     {
       "name": "kilo",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in kilobytes",
       "isLong": true
     },
     {
       "name": "mega",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in megabytes",
       "isLong": true
     },
     {
       "name": "giga",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in gigabytes",
       "isLong": true
     },
     {
       "name": "tera",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in terabytes",
       "isLong": true
     },
     {
       "name": "peta",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in petabytes",
       "isLong": true
     },
     {
       "name": "kibi",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "k",
+      "description": "Show output in kibibytes",
       "isLong": true
     },
     {
       "name": "mebi",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "m",
+      "description": "Show output in mebibytes",
       "isLong": true
     },
     {
       "name": "gibi",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "g",
+      "description": "Show output in gibibytes",
       "isLong": true
     },
     {
       "name": "tebi",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in tebibytes",
       "isLong": true
     },
     {
       "name": "pebi",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show output in pebibytes",
       "isLong": true
     },
     {
       "name": "human",
       "argumentType": "NO_ARGUMENT",
+      "description": "Show human-readable output.",
       "equivalent": "h",
       "isLong": true
     },
     {
       "name": "si",
       "argumentType": "NO_ARGUMENT",
+      "description": "Use powers of 1000 not 1024.",
       "isLong": true
     },
     {
       "name": "lohi",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "l",
+      "description": "Show detailed low and high memory statistics.",
       "isLong": true
     },
     {
       "name": "total",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "t",
+      "description": "Show total for RAM and swap.",
       "isLong": true
     },
     {
       "name": "seconds",
       "argumentType": "ARGUMENT_REQUIRED",
       "equivalent": "s",
+      "description": "Repeat printing every N seconds.",
       "isLong": true
     },
     {
       "name": "count",
       "argumentType": "ARGUMENT_REQUIRED",
       "equivalent": "c",
+      "description": "Repeat printing N times, then exit.",
       "isLong": true
     },
     {
       "name": "wide",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "w",
+      "description": "Wide output",
       "isLong": true
     },
     {

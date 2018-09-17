@@ -32,10 +32,6 @@
     "shortDescription": "remove files or directories"
   },
   {
-    "name": "diff",
-    "shortDescription": "compare files line by line"
-  },
-  {
     "name": "wc",
     "shortDescription": "print newline, word, and byte counts for each file"
   },

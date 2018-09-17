@@ -7,19 +7,9 @@
   ],
   "options": [
     {
-      "name": "F",
-      "argumentType": "ARGUMENT_REQUIRED",
-      "isLong": false
-    },
-    {
       "name": "k",
       "argumentType": "NO_ARGUMENT",
       "description": "Print sizes in 1024-byte blocks, overriding the default block size (*note Block size::).  This option is equivalent to ‘--block-size\u003d1K’.",
-      "isLong": false
-    },
-    {
-      "name": "m",
-      "argumentType": "NO_ARGUMENT",
       "isLong": false
     },
     {

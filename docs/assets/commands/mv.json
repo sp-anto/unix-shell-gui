@@ -5,7 +5,7 @@
   "syntaxes": [
     "mv [OPTION]... [-T] SOURCE DEST",
     "mv [OPTION]... SOURCE... DIRECTORY",
-    "mv [OPTION]... -t DIRECTORY SOURCE..."
+    "mv [OPTION]... --target-directory=DIRECTORY SOURCE..."
   ],
   "options": [
     {

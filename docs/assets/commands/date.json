@@ -4,7 +4,7 @@
   "longDescription": "Display the current time in the given FORMAT, or set the system date.",
   "syntaxes": [
     "date [OPTION]... [+FORMAT]",
-    "date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]"
+    "date [--universal] [FORMAT(MMDDhhmmCCYY.ss)]"
   ],
   "options": [
     {
@@ -49,18 +49,6 @@
       "isLong": true
     },
     {
-      "name": "rfc-822",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "R",
-      "isLong": true
-    },
-    {
-      "name": "rfc-2822",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "R",
-      "isLong": true
-    },
-    {
       "name": "rfc-3339",
       "argumentType": "ARGUMENT_REQUIRED",
       "description": "Display the date using a format specified by Internet RFC 3339 (https://tools.ietf.org/search/rfc3339).  This is like ‘--iso-8601’, except that a space rather than a ‘T’ separates dates from times.  This format is always suitable as input for the ‘--date’ (‘-d’) and ‘--file’ (‘-f’) options, regardless of the current locale.",
@@ -71,12 +59,6 @@
       "argumentType": "ARGUMENT_REQUIRED",
       "equivalent": "s",
       "description": "Set the date and time to DATESTR.  See ‘-d’ above.  See also *note Setting the time::.",
-      "isLong": true
-    },
-    {
-      "name": "uct",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "u",
       "isLong": true
     },
     {

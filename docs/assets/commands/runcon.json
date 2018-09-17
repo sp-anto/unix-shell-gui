@@ -4,7 +4,7 @@
   "longDescription": "Run  COMMAND  with  completely-specified CONTEXT, or with current or transitioned security context modified by one or more of LEVEL, ROLE, TYPE, and USER.",
   "syntaxes": [
     "runcon CONTEXT COMMAND [args]",
-    "runcon [ -c ] [-u USER] [-r ROLE] [-t TYPE] [-l RANGE] COMMAND [args]"
+    "runcon [OPTION]... COMMAND [args]"
   ],
   "options": [
     {

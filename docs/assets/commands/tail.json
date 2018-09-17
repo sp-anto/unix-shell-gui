@@ -7,65 +7,9 @@
   ],
   "options": [
     {
-      "name": "f",
-      "argumentType": "NO_ARGUMENT",
-      "description": "Loop forever trying to read more characters at the end of the file, presumably because the file is growing.  If more than one file is given, ‘tail’ prints a header whenever it gets output from a different file, to indicate which file that output is from.",
-      "isLong": false
-    },
-    {
       "name": "F",
       "argumentType": "NO_ARGUMENT",
       "description": "This option is the same as ‘--follow\u003dname --retry’.  That is, tail will attempt to reopen a file when it is removed.  Should this fail, tail will keep trying until it becomes accessible again.",
-      "isLong": false
-    },
-    {
-      "name": "0",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "1",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "2",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "3",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "4",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "5",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "6",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "7",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "8",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
-      "name": "9",
-      "argumentType": "NO_ARGUMENT",
       "isLong": false
     },
     {
@@ -78,6 +22,7 @@
     {
       "name": "follow",
       "argumentType": "OPTIONAL_ARGUMENT",
+      "equivalent": "f",
       "description": "Loop forever trying to read more characters at the end of the file, presumably because the file is growing.  If more than one file is given, ‘tail’ prints a header whenever it gets output from a different file, to indicate which file that output is from.",
       "isLong": true
     },
@@ -95,19 +40,9 @@
       "isLong": true
     },
     {
-      "name": "-disable-inotify",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": true
-    },
-    {
       "name": "pid",
       "argumentType": "ARGUMENT_REQUIRED",
       "description": "When following by name or by descriptor, you may specify the process ID, PID, of the sole writer of all FILE arguments.  Then, shortly after that process terminates, tail will also terminate. This will work properly only if the writer and the tailing process are running on the same machine.  For example, to save the output of a build in a file and to watch the file grow, if you invoke ‘make’ and ‘tail’ like this then the tail process will stop when your build completes.  Without this option, you would have had to kill the ‘tail -f’ process yourself.",
-      "isLong": true
-    },
-    {
-      "name": "-presume-input-pipe",
-      "argumentType": "NO_ARGUMENT",
       "isLong": true
     },
     {

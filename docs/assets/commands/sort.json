@@ -196,7 +196,7 @@
       "name": "unique",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "u",
-      "description": "(‘-u’) option also disables the last-resort comparison.",
+      "description": "Normally, output only the first of a sequence of lines that compare equal.  For the ‘--check’ (‘-c’ or ‘-C’) option, check that no pair of consecutive lines compares equal.",
       "isLong": true
     },
     {
@@ -220,7 +220,6 @@
     {
       "name": "version",
       "argumentType": "NO_ARGUMENT",
-      "description": "Sort by version name and number.  It behaves like a standard sort, except that each sequence of decimal digits is treated numerically as an index/version number.  ()",
       "isLong": true
     }
   ]

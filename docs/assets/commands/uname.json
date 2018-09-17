@@ -21,12 +21,6 @@
       "isLong": true
     },
     {
-      "name": "sysname",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "s",
-      "isLong": true
-    },
-    {
       "name": "nodename",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "n",
@@ -38,12 +32,6 @@
       "argumentType": "NO_ARGUMENT",
       "equivalent": "r",
       "description": "Print the kernel release.",
-      "isLong": true
-    },
-    {
-      "name": "release",
-      "argumentType": "NO_ARGUMENT",
-      "equivalent": "r",
       "isLong": true
     },
     {

@@ -5,7 +5,7 @@
   "syntaxes": [
     "cp [OPTION]... [-T] SOURCE DEST",
     "cp [OPTION]... SOURCE... DIRECTORY",
-    "cp [OPTION]... -t DIRECTORY SOURCE..."
+    "cp [OPTION]... --target-directory=DIRECTORY SOURCE..."
   ],
   "options": [
     {
@@ -124,11 +124,6 @@
       "name": "parents",
       "argumentType": "NO_ARGUMENT",
       "description": "Form the name of each destination file by appending to the target directory a slash and the specified name of the source file.  The last argument given to ‘cp’ must be the name of an existing directory.  For example, the command:",
-      "isLong": true
-    },
-    {
-      "name": "path",
-      "argumentType": "NO_ARGUMENT",
       "isLong": true
     },
     {

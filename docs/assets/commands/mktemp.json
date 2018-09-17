@@ -13,11 +13,6 @@
       "isLong": false
     },
     {
-      "name": "V",
-      "argumentType": "NO_ARGUMENT",
-      "isLong": false
-    },
-    {
       "name": "directory",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "d",

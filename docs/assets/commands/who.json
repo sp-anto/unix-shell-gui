@@ -3,7 +3,8 @@
   "shortDescription": "show who is logged on",
   "longDescription": "Print information about users who are currently logged in.",
   "syntaxes": [
-    "who [OPTION]... [ FILE | ARG1 ARG2 ]"
+    "who [OPTION]... [FILE]",
+    "who [OPTION]... ARG1 ARG2"
   ],
   "options": [
     {
@@ -56,6 +57,7 @@
     {
       "name": "ips",
       "argumentType": "NO_ARGUMENT",
+      "description": "Print ips instead of hostnames. with --lookup, canonicalizes based on stored IP, if available, rather than stored hostname.",
       "isLong": true
     },
     {
@@ -103,6 +105,7 @@
       "name": "short",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "s",
+      "description": "Print only name, line, and time (default).",
       "isLong": true
     },
     {
@@ -116,6 +119,7 @@
       "name": "users",
       "argumentType": "NO_ARGUMENT",
       "equivalent": "u",
+      "description": "List users logged in.",
       "isLong": true
     },
     {

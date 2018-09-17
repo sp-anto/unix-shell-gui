@@ -9,46 +9,55 @@
     {
       "name": "s",
       "argumentType": "NO_ARGUMENT",
+      "description": "Do short format output, this is the default.",
       "isLong": false
     },
     {
       "name": "f",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the line of column headings in short format.",
       "isLong": false
     },
     {
       "name": "w",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's full name in short format.",
       "isLong": false
     },
     {
       "name": "i",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's full name and remote host in short format.",
       "isLong": false
     },
     {
       "name": "q",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's full name, remote host and idle time in short format.",
       "isLong": false
     },
     {
       "name": "b",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's home directory and shell in long format.",
       "isLong": false
     },
     {
       "name": "h",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's project file in long format.",
       "isLong": false
     },
     {
       "name": "l",
       "argumentType": "NO_ARGUMENT",
+      "description": "Produce long format output for the specified USERs.",
       "isLong": false
     },
     {
       "name": "p",
       "argumentType": "NO_ARGUMENT",
+      "description": "Omit the user's plan file in long format.",
       "isLong": false
     },
     {
