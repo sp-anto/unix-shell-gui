@@ -11,6 +11,10 @@ Select the command you want to enter from dropdown menu 'Select command/operator
 
 The application provides two Settings. One for using 'Long options' of the command when they are available and one for generating comments explaining the meaning of the selected options.
 
+#### Known issues
+
+Commands od, stty, chown, ptx, nice and env are not created properly.
+
 #### Installation instructions
 1. Clone repository
 
