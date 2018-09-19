@@ -1,0 +1,348 @@
+{
+  "name": "grep",
+  "shortDescription": "print lines matching a pattern",
+  "longDescription": "grep  searches  for  PATTERN  in  each  FILE.   A FILE of “-” stands for standard input.  If no FILE is given, recursive searches examine the working directory, and nonrecursive searches read standard input.  By  default, grep prints the matching lines.",
+  "syntaxes": [
+    "grep [OPTION]... PATTERN [FILE]...",
+    "grep [OPTION]... --regexp=PATTERN [FILE]...",
+    "grep [OPTION]... --file=FILE [FILE]..."
+  ],
+  "options": [
+    {
+      "name": "I",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Process a binary file as if it did not contain matching data; this is equivalent to the ‘--binary-files\u003dwithout-match’ option.",
+      "isLong": false
+    },
+    {
+      "name": "y",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Ignore case distinctions, so that characters that differ only in case match each other.  Although this is straightforward when letters differ in case only via lowercase-uppercase pairs, the behavior is unspecified in other situations.  For example, uppercase “S” has an unusual lowercase counterpart “ſ” (Unicode character U+017F, LATIN SMALL LETTER LONG S) in many locales, and it is unspecified whether this unusual character matches “S” or “s” even though uppercasing it yields “S”.  Another example: the lowercase German letter “ß” (U+00DF, LATIN SMALL LETTER SHARP S) is normally capitalized as the two-character string “SS” but it does not match “SS”, and it might not match the uppercase letter “ẞ” (U+1E9E, LATIN CAPITAL LETTER SHARP S) even though lowercasing the latter yields the former.",
+      "isLong": false
+    },
+    {
+      "name": "basic-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "G",
+      "description": "Interpret the pattern as a basic regular expression (BRE). This is the default.",
+      "isLong": true
+    },
+    {
+      "name": "extended-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "E",
+      "description": "Interpret the pattern as an extended regular expression (ERE). (‘-E’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "fixed-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "F",
+	  "description": "PATTERN is a set of newline-separated strings.",
+      "isLong": true
+    },
+    {
+      "name": "fixed-strings",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "F",
+      "description": "Interpret the pattern as a list of fixed strings (instead of regular expressions), separated by newlines, any of which is to be matched.  (‘-F’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "perl-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "P",
+      "description": "Interpret the pattern as a Perl-compatible regular expression (PCRE). This is experimental, particularly when combined with the ‘-z’ (‘--null-data’) option, and ‘grep -P’ may warn of unimplemented features.",
+      "isLong": true
+    },
+    {
+      "name": "after-context",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "A",
+      "description": "Print NUM lines of trailing context after matching lines.",
+      "isLong": true
+    },
+    {
+      "name": "before-context",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "B",
+      "description": "Print NUM lines of leading context before matching lines.",
+      "isLong": true
+    },
+    {
+      "name": "binary-files",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "If a file’s data or metadata indicate that the file contains binary data, assume that the file is of type TYPE.  Non-text bytes indicate binary data; these are either output bytes that are improperly encoded for the current locale (*note Environment Variables::), or null input bytes when the ‘-z’ (‘--null-data’) option is not given (*note Other Options::).",
+      "isLong": true
+    },
+    {
+      "name": "byte-offset",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "b",
+      "description": "Print the 0-based byte offset within the input file before each line of output.  If ‘-o’ (‘--only-matching’) is specified, print the offset of the matching part itself.",
+      "isLong": true
+    },
+    {
+      "name": "context",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "C",
+      "description": "Print NUM lines of leading and trailing output context.",
+      "isLong": true
+    },
+    {
+      "name": "color",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Surround the matched (non-empty) strings, matching lines, context lines, file names, line numbers, byte offsets, and separators (for fields and groups of context lines) with escape sequences to display them in color on the terminal.  The colors are defined by the environment variable ‘GREP_COLORS’ and default to ‘ms\u003d01;31:mc\u003d01;31:sl\u003d:cx\u003d:fn\u003d35:ln\u003d32:bn\u003d32:se\u003d36’ for bold red matched text, magenta file names, green line numbers, green byte offsets, cyan separators, and default terminal colors otherwise. The deprecated environment variable ‘GREP_COLOR’ is still supported, but its setting does not have priority; it defaults to ‘01;31’ (bold red) which only covers the color for matched text. WHEN is ‘never’, ‘always’, or ‘auto’.",
+      "isLong": true
+    },
+    {
+      "name": "colour",
+      "argumentType": "OPTIONAL_ARGUMENT",
+      "description": "Surround the matched (non-empty) strings, matching lines, context lines, file names, line numbers, byte offsets, and separators (for fields and groups of context lines) with escape sequences to display them in color on the terminal.  The colors are defined by the environment variable ‘GREP_COLORS’ and default to ‘ms\u003d01;31:mc\u003d01;31:sl\u003d:cx\u003d:fn\u003d35:ln\u003d32:bn\u003d32:se\u003d36’ for bold red matched text, magenta file names, green line numbers, green byte offsets, cyan separators, and default terminal colors otherwise. The deprecated environment variable ‘GREP_COLOR’ is still supported, but its setting does not have priority; it defaults to ‘01;31’ (bold red) which only covers the color for matched text. WHEN is ‘never’, ‘always’, or ‘auto’.",
+      "isLong": true
+    },
+    {
+      "name": "count",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "c",
+      "description": "Suppress normal output; instead print a count of matching lines for each input file.  With the ‘-v’ (‘--invert-match’) option, count non-matching lines.  (‘-c’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "devices",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "D",
+      "description": "If an input file is a device, FIFO, or socket, use ACTION to process it.  If ACTION is ‘read’, all devices are read just as if they were ordinary files.  If ACTION is ‘skip’, devices, FIFOs, and sockets are silently skipped.  By default, devices are read if they are on the command line or if the ‘-R’ (‘--dereference-recursive’) option is used, and are skipped if they are encountered recursively and the ‘-r’ (‘--recursive’) option is used.  This option has no effect on a file that is read via standard input.",
+      "isLong": true
+    },
+    {
+      "name": "directories",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "d",
+      "description": "If an input file is a directory, use ACTION to process it.  By default, ACTION is ‘read’, which means that directories are read just as if they were ordinary files (some operating systems and file systems disallow this, and will cause ‘grep’ to print error messages for every directory or silently skip them).  If ACTION is ‘skip’, directories are silently skipped.  If ACTION is ‘recurse’, ‘grep’ reads all files under each directory, recursively, following command-line symbolic links and skipping other symlinks; this is equivalent to the ‘-r’ option.",
+      "isLong": true
+    },
+    {
+      "name": "exclude",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Skip any command-line file with a name suffix that matches the pattern GLOB, using wildcard matching; a name suffix is either the whole name, or any suffix starting after a ‘/’ and before a non-‘/’.  When searching recursively, skip any subfile whose base name matches GLOB; the base name is the part after the last ‘/’.  A pattern can use ‘*’, ‘?’, and ‘[’...‘]’  as wildcards, and ‘\\’ to quote a wildcard or backslash character literally.",
+      "isLong": true
+    },
+    {
+      "name": "exclude-from",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Skip files whose name matches any of the patterns read from FILE (using wildcard matching as described under ‘--exclude’).",
+      "isLong": true
+    },
+    {
+      "name": "exclude-dir",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Skip any command-line directory with a name suffix that matches the pattern GLOB.  When searching recursively, skip any subdirectory whose base name matches GLOB.  Ignore any redundant trailing slashes in GLOB.",
+      "isLong": true
+    },
+    {
+      "name": "file",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "f",
+      "description": "Obtain patterns from FILE, one per line.  If this option is used multiple times or is combined with the ‘-e’ (‘--regexp’) option, search for all patterns given.  The empty file contains zero patterns, and therefore matches nothing.  (‘-f’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "files-with-matches",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "l",
+      "description": "Suppress normal output; instead print the name of each input file from which output would normally have been printed.  The scanning of each file stops on the first match.  (‘-l’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "files-without-match",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "L",
+      "description": "Suppress normal output; instead print the name of each input file from which no output would normally have been printed.  The scanning of each file stops on the first match.",
+      "isLong": true
+    },
+    {
+      "name": "group-separator",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "When ‘-A’, ‘-B’ or ‘-C’ are in use, print STRING instead of ‘--’ between groups of lines.",
+      "isLong": true
+    },
+    {
+      "name": "help",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Print a usage message briefly summarizing the command-line options and the bug-reporting address, then exit.",
+      "isLong": true
+    },
+    {
+      "name": "include",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Search only files whose name matches GLOB, using wildcard matching as described under ‘--exclude’.",
+      "isLong": true
+    },
+    {
+      "name": "ignore-case",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "i",
+      "description": "Ignore case distinctions, so that characters that differ only in case match each other.  Although this is straightforward when letters differ in case only via lowercase-uppercase pairs, the behavior is unspecified in other situations.  For example, uppercase “S” has an unusual lowercase counterpart “ſ” (Unicode character U+017F, LATIN SMALL LETTER LONG S) in many locales, and it is unspecified whether this unusual character matches “S” or “s” even though uppercasing it yields “S”.  Another example: the lowercase German letter “ß” (U+00DF, LATIN SMALL LETTER SHARP S) is normally capitalized as the two-character string “SS” but it does not match “SS”, and it might not match the uppercase letter “ẞ” (U+1E9E, LATIN CAPITAL LETTER SHARP S) even though lowercasing the latter yields the former.",
+      "isLong": true
+    },
+    {
+      "name": "initial-tab",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "T",
+      "description": "Make sure that the first character of actual line content lies on a tab stop, so that the alignment of tabs looks normal.  This is useful with options that prefix their output to the actual content: ‘-H’, ‘-n’, and ‘-b’.  This may also prepend spaces to output line numbers and byte offsets so that lines from a single file all start at the same column.",
+      "isLong": true
+    },
+    {
+      "name": "label",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "description": "Display input actually coming from standard input as input coming from file LABEL.  This is especially useful when implementing tools like ‘zgrep’; e.g.:",
+      "isLong": true
+    },
+    {
+      "name": "line-buffered",
+      "argumentType": "NO_ARGUMENT",
+      "description": "Use line buffering on output.  This can cause a performance penalty.",
+      "isLong": true
+    },
+    {
+      "name": "line-number",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "n",
+      "description": "Prefix each line of output with the 1-based line number within its input file.  (‘-n’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "line-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "x",
+      "description": "Select only those matches that exactly match the whole line.  For a regular expression pattern, this is like parenthesizing the pattern and then surrounding it with ‘^’ and ‘$’.  (‘-x’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "max-count",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "m",
+      "description": "Stop after the first NUM selected lines.  If the input is standard input from a regular file, and NUM selected lines are output, ‘grep’ ensures that the standard input is positioned just after the last selected line before exiting, regardless of the presence of trailing context lines.  This enables a calling process to resume a search.  For example, the following shell script makes use of it:",
+      "isLong": true
+    },
+    {
+      "name": "no-filename",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "h",
+      "description": "Suppress the prefixing of file names on output.  This is the default when there is only one file (or only standard input) to search.",
+      "isLong": true
+    },
+    {
+      "name": "no-group-separator",
+      "argumentType": "NO_ARGUMENT",
+      "description": "When ‘-A’, ‘-B’ or ‘-C’ are in use, do not print a separator between groups of lines.",
+      "isLong": true
+    },
+    {
+      "name": "no-messages",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "s",
+      "description": "Suppress error messages about nonexistent or unreadable files. Portability note: unlike GNU ‘grep’, 7th Edition Unix ‘grep’ did not conform to POSIX, because it lacked ‘-q’ and its ‘-s’ option behaved like GNU ‘grep’’s ‘-q’ option.(1)  USG-style ‘grep’ also lacked ‘-q’ but its ‘-s’ option behaved like GNU ‘grep’’s. Portable shell scripts should avoid both ‘-q’ and ‘-s’ and should redirect standard and error output to ‘/dev/null’ instead.  (‘-s’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "null",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "Z",
+      "description": "Output a zero byte (the ASCII NUL character) instead of the character that normally follows a file name.  For example, ‘grep -lZ’ outputs a zero byte after each file name instead of the usual newline.  This option makes the output unambiguous, even in the presence of file names containing unusual characters like newlines. This option can be used with commands like ‘find -print0’, ‘perl -0’, ‘sort -z’, and ‘xargs -0’ to process arbitrary file names, even those that contain newline characters.",
+      "isLong": true
+    },
+    {
+      "name": "null-data",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "z",
+      "description": "Treat input and output data as sequences of lines, each terminated by a zero byte (the ASCII NUL character) instead of a newline. Like the ‘-Z’ or ‘--null’ option, this option can be used with commands like ‘sort -z’ to process arbitrary file names.",
+      "isLong": true
+    },
+    {
+      "name": "only-matching",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "o",
+      "description": "Print only the matched (non-empty) parts of matching lines, with each such part on a separate output line.  Output lines use the same delimiters as input, and delimiters are null bytes if ‘-z’ (‘--null-data’) is also used (*note Other Options::).",
+      "isLong": true
+    },
+    {
+      "name": "quiet",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Quiet; do not write anything to standard output.  Exit immediately with zero status if any match is found, even if an error was detected.  Also see the ‘-s’ or ‘--no-messages’ option.  (‘-q’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "r",
+      "description": "For each directory operand, read and process all files in that directory, recursively.  Follow symbolic links on the command line, but skip symlinks that are encountered recursively.  Note that if no file operand is given, grep searches the working directory. This is the same as the ‘--directories\u003drecurse’ option.",
+      "isLong": true
+    },
+    {
+      "name": "dereference-recursive",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "R",
+      "description": "For each directory operand, read and process all files in that directory, recursively, following all symbolic links.",
+      "isLong": true
+    },
+    {
+      "name": "regexp",
+      "argumentType": "ARGUMENT_REQUIRED",
+      "equivalent": "e",
+      "description": "Use PATTERN as the pattern.  If this option is used multiple times or is combined with the ‘-f’ (‘--file’) option, search for all patterns given.  (‘-e’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "invert-match",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "v",
+      "description": "Invert the sense of matching, to select non-matching lines.  (‘-v’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "silent",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "q",
+      "description": "Quiet; do not write anything to standard output.  Exit immediately with zero status if any match is found, even if an error was detected.  Also see the ‘-s’ or ‘--no-messages’ option.  (‘-q’ is specified by POSIX.)",
+      "isLong": true
+    },
+    {
+      "name": "text",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "a",
+      "description": "Process a binary file as if it were text; this is equivalent to the ‘--binary-files\u003dtext’ option.",
+      "isLong": true
+    },
+    {
+      "name": "binary",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "U",
+      "description": "If a file’s data or metadata indicate that the file contains binary data, assume that the file is of type TYPE.  Non-text bytes indicate binary data; these are either output bytes that are improperly encoded for the current locale (*note Environment Variables::), or null input bytes when the ‘-z’ (‘--null-data’) option is not given (*note Other Options::).",
+      "isLong": true
+    },
+    {
+      "name": "version",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "V",
+      "description": "Print the version number of ‘grep’ to the standard output stream. This version number should be included in all bug reports.",
+      "isLong": true
+    },
+    {
+      "name": "with-filename",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "H",
+      "description": "Print the file name for each match.  This is the default when there is more than one file to search.",
+      "isLong": true
+    },
+    {
+      "name": "word-regexp",
+      "argumentType": "NO_ARGUMENT",
+      "equivalent": "w",
+      "description": "Select only those lines containing matches that form whole words. The test is that the matching substring must either be at the beginning of the line, or preceded by a non-word constituent character.  Similarly, it must be either at the end of the line or followed by a non-word constituent character.  Word-constituent characters are letters, digits, and the underscore.  This option has no effect if ‘-x’ is also specified.",
+      "isLong": true
+    }
+  ]
+}

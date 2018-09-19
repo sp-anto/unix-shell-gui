@@ -32,6 +32,10 @@
     "shortDescription": "remove files or directories"
   },
   {
+    "name": "grep",
+    "shortDescription": "print lines matching a pattern"
+  },
+  {
     "name": "wc",
     "shortDescription": "print newline, word, and byte counts for each file"
   },
